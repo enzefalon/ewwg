@@ -35,10 +35,17 @@ $google-font-subsets: (
 //
 @function __gf__list-unique($list) {
   $result: ();
-  @each $item in $list { @if not index($result, $item+''){ $result: append($result, $item+'');} }
-  @each $item in $result { $result: set-nth($result, index($result, $item),unquote($item)); }
+  @each $item in $list {
+    @if not index($result, $item+'') {
+      $result: append($result, $item+'');
+    }
+  }
+  @each $item in $result {
+    $result: set-nth($result, index($result, $item), unquote($item));
+  }
   @return $result;
 }
+
 @function __gf__str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
   @return if($index,
@@ -47,9 +54,12 @@ $google-font-subsets: (
     str-length($search)), $search, $replace),
     $string);
 }
-@function __gf__str-explode($string){
-  $list:();
-  @for $i from 1 through str-length($string) { $list: append($list, str-slice($string, $i, $i)); }
+
+@function __gf__str-explode($string) {
+  $list: ();
+  @for $i from 1 through str-length($string) {
+    $list: append($list, str-slice($string, $i, $i));
+  }
   @return $list;
 }
 
@@ -61,19 +71,27 @@ $google-font-subsets: (
   $weights: 400,      //  list or numeric value (100 200 300 400 ...)
   $styles : normal,   //  list or string (normal and or italic)
   $text   : null      //  string (don\'t forget to unescape )
-){
+) {
   //  base url
   $URL: '//fonts.googleapis.com/css?family=';
 
   //  create global variables
-  @if not variable-exists(__gf__combine){ $__gf__combine: false !global; }
-  @if not variable-exists(__gf__map){ $__gf__map: () !global; }
-  @if not variable-exists(google-font-subsets){ $google-font-subsets: () !global; }
+  @if not variable-exists(__gf__combine) {
+    $__gf__combine: false !global;
+  }
+  @if not variable-exists(__gf__map) {
+    $__gf__map: () !global;
+  }
+  @if not variable-exists(google-font-subsets) {
+    $google-font-subsets: () !global;
+  }
 
   //  append italic to weights
-  @if index($styles, italic) and not str-index($weights+'',i){
+  @if index($styles, italic) and not str-index($weights+'',i) {
     $wgt: if(index($styles, normal), $weights, ());
-    @each $weight in $weights { $wgt: append($wgt, $weight + i); }
+    @each $weight in $weights {
+      $wgt: append($wgt, $weight + i);
+    }
     $weights: $wgt;
   }
 
@@ -102,8 +120,8 @@ $google-font-subsets: (
 
   @if $name {
     //  replace name whitespaces
-    $name: if(type-of($name) == string, unquote($name),$name);
-    $name: __gf__str-replace(inspect($name),' ','+');
+    $name: if(type-of($name) == string, unquote($name), $name);
+    $name: __gf__str-replace(inspect($name), ' ', '+');
     @if $__gf__combine and not $text {
       //  add weights to combine map
       $wgt: map-get($__gf__map, $name) or ();
@@ -112,23 +130,27 @@ $google-font-subsets: (
     } @else {
       //  create query
       $query: '';
-      @each $weight in $weights { $query: $query + if($query != '', ',', '') + $weight; }
+      @each $weight in $weights {
+        $query: $query + if($query != '', ',', '') + $weight;
+      }
       $query: __gf__str-replace($query, ' ');
       $query: $name + if(str-length($query) > 0 and $query != '400',  ':'+ $query, '');
 
       //  create single immport
-      @at-root { @import url($URL + $query + if($text, $text, '') + $subset); }
+      @at-root {
+        @import url($URL + $query + if($text, $text, '') + $subset);
+      }
     }
   } @else {
     //  set combine flag
-    $__gf__combine: true  !global;
+    $__gf__combine: true !global;
 
     //  nested includes
     @content;
 
     //  convert combine map to query
     //  (remove weights if just 400)
-    $query:'';
+    $query: '';
     @each $font, $weights in $__gf__map {
       $query: $query + if($query != '', '|', '') + $font +
                 if(length($weights) == 1 and (nth($weights, 1) == '400'),
@@ -136,26 +158,14 @@ $google-font-subsets: (
     }
 
     //  remove query whitespaces
-    $query: __gf__str-replace($query,' ');
+    $query: __gf__str-replace($query, ' ');
 
     //  create combined immport
-    @at-root { @import url($URL + $query + $subset); }
+    @at-root {
+      @import url($URL + $query + $subset);
+    }
 
     //  reset combine flag
     $__gf__combine: false !global;
-  }
-}
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  HSB TO HSL Converter
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
-  @if $b-hsb == 0 {
-    @return hsla(0, 0, 0, $a)
-  } @else {
-    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
-    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
-    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
   }
 }

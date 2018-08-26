@@ -1,0 +1,9 @@
+@each $color, $value in $theme-colors-1 {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+@each $color, $value in $theme-colors-2 {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+@each $color, $value in $theme-colors-2 {
+  @include bg-variant(".bg-#{$color}", $value);
+}

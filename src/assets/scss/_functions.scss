@@ -1,0 +1,45 @@
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Retrieve Theme Color
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@function theme-color( $theme-color-set: $theme-colors-1, $key: "primary") {
+  @return map-get($theme-color-set, $key);
+}
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  HSB TO HSL Converter
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb == 0 {
+    @return hsla(0, 0, 0, $a)
+  } @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Breakpoint Functions
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02px, null);
+}
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}

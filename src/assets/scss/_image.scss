@@ -1,0 +1,10 @@
+.img-fluid {
+  @include img-fluid;
+}
+figure {
+  display: inline-block;
+}
+
+.figure-img {
+  line-height: 1;
+}

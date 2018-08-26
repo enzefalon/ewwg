@@ -1,23 +1,29 @@
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  Base Imports
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-@import "functions";
-@import "mixins/background";
-@import "mixins/breakpoint";
-@import "mixins/googlefonts";
-@import "mixins/grid";
-@import "mixins/image";
-@import "mixins/utils";
-@import "variables";
-@import "fonts";
-@import "reboot";
-@import "utilities/background";
-@import "utilities/embed";
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  Global Layout
+//  Clearfix
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import "base";
-@import "grid";
-@import "image";
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Transition
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    @if length($transition) == 0 {
+      transition: $transition-base;
+    } @else {
+      transition: $transition;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

@@ -1,0 +1,15 @@
+html, body, #app {
+  height: 100%;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  &.theme-2 {
+    color:  $body-color-2;
+  }
+  &.theme-3 {
+    color: $body-color-3;
+  }
+}
