@@ -1,1 +1,78 @@
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––//  Colors// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––////  Grey//$black: hsb(240,2,16); //#282829$grey-100: hsb(216,3,40); //#636466$grey-300: hsb(216,3,59); //#929497$grey-500: hsb(220,2,70); //#AFB0B2$grey-700: hsb(210,3,80); //#C6C9CC$grey-900: hsb(210,3,93); //#E6EAED$white: hsl(0,0,100); //#FFFFFF////  Yellow//$yellow-100: hsb(46,69,100); //#FFD550$yellow-200: hsb(45,50,100); //#FEDE80$yellow-300: hsb(43,30,100); //#FFE9B3////  Blue//$blue-100: hsb(208,65,80); //#488FCC$blue-200: hsb(203,60,87); //#59ABDF$blue-300: hsb(203,46,92); //#7EC1EA////  Green//$green-100: hsb(171,52,76); //#5EC3B4$green-200: hsb(171,37,81); //#81CEC3$green-300: hsb(171,24,85); //#A5D9D1////  Red//$red-100: hsb(14,82,95); //#F15A2B$red-200: hsb(13,67,95); //#F37450$red-300: hsb(13,48,97); //#F79A81////  Orange//$orange-100: hsb(29,82,96); //#F68C2C$orange-200: hsb(27,67,97); //#F89D51$orange-300: hsb(27,49,98); //#FBB880////  Default Colors//$body-color: $yellow-100;$body-bg: $black;// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––//  Fonts weights// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––$font-weight-light: 300;$font-weight-normal: 400;$font-weight-medium: 500;$font-weight-bold: 700;$font-weight-base: $font-weight-normal;$line-height-base: 1.5;// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––//  Fonts// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––$font-family-base: 'Montserrat', sans-serif;$font-family-icons: 'gallery_icons';$font-size-base: 1rem;
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Colors
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+//
+//  Grey
+//
+$black: hsb(240,2,16); //#282829
+$grey-100: hsb(216,3,40); //#636466
+$grey-300: hsb(216,3,59); //#929497
+$grey-500: hsb(220,2,70); //#AFB0B2
+$grey-700: hsb(210,3,80); //#C6C9CC
+$grey-900: hsb(210,3,93); //#E6EAED
+$white: hsl(0,0,100); //#FFFFFF
+
+//
+//  Yellow
+//
+$yellow-100: hsb(46,69,100); //#FFD550
+$yellow-200: hsb(45,50,100); //#FEDE80
+$yellow-300: hsb(43,30,100); //#FFE9B3
+
+//
+//  Blue
+//
+$blue-100: hsb(208,65,80); //#488FCC
+$blue-200: hsb(203,60,87); //#59ABDF
+$blue-300: hsb(203,46,92); //#7EC1EA
+
+//
+//  Green
+//
+$green-100: hsb(171,52,76); //#5EC3B4
+$green-200: hsb(171,37,81); //#81CEC3
+$green-300: hsb(171,24,85); //#A5D9D1
+
+//
+//  Red
+//
+$red-100: hsb(14,82,95); //#F15A2B
+$red-200: hsb(13,67,95); //#F37450
+$red-300: hsb(13,48,97); //#F79A81
+
+//
+//  Orange
+//
+$orange-100: hsb(29,82,96); //#F68C2C
+$orange-200: hsb(27,67,97); //#F89D51
+$orange-300: hsb(27,49,98); //#FBB880
+
+//
+//  Default Colors
+//
+$body-color: $yellow-100;
+$body-bg: $black;
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Fonts weights
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Fonts
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-icons: 'gallery_icons';
+$font-size-base: 1rem;
+
+
+
