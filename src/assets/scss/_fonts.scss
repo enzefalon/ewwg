@@ -1,0 +1,94 @@
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Fonts
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+//
+//  Default Fonts
+//
+@include google-font(Montserrat, 300 500 700);
+
+//
+//  Icon Fonts
+//
+@font-face {
+  font-family: 'gallery_icons';
+  src: url('~@/assets/fonts/gallery_icons.woff2') format('woff2'),
+    url('~@/assets/fonts/gallery_icons.woff') format('woff'),
+    url('~@/assets/fonts/gallery_icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: 'gallery_icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  line-height: 1em;
+  margin-left: .2em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-picture:before {
+  content: '\e800';
+}
+
+.icon-video:before {
+  content: '\e801';
+}
+
+.icon-eye:before {
+  content: '\e802';
+}
+
+.icon-clock:before {
+  content: '\e803';
+}
+
+.icon-search:before {
+  content: '\e804';
+}
+
+.icon-playlist:before {
+  content: '\e805';
+}
+
+.icon-playall:before {
+  content: '\e806';
+}
+
+.icon-calendar:before {
+  content: '\e807';
+}
+
+.icon-left-open-big:before {
+  content: '\e808';
+}
+
+.icon-right-open-big:before {
+  content: '\e809';
+}
+
+.icon-resize-full:before {
+  content: '\e80a';
+}
+
+.icon-sort-name-up:before {
+  content: '\f15d';
+}
+
+.icon-sort-name-down:before {
+  content: '\f15e';
+}
+
+.icon-user-o:before {
+  content: '\f2c0';
+}
