@@ -4,6 +4,8 @@ html, body, #app {
 }
 
 #app {
+  @include make-container();
+  position: relative;
   display: flex;
   flex-direction: column;
   &.theme-2 {
