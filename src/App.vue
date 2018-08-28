@@ -1,14 +1,16 @@
 <template>
   <div id="app" class="theme-1">
     <background-lines></background-lines>
+    <site-header></site-header>
   </div>
 </template>
 
 <script>
 import BackgroundLines from "@/components/base/BackgroundLines";
-import LogoContainer from "@/components/base/LogoContainer";
+import SiteHeader from "@/components/sitemodules/SiteHeader";
+
 export default {
-  components: { BackgroundLines, LogoContainer },
+  components: { BackgroundLines, SiteHeader },
   props: {},
   data() {
     return {};

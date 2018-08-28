@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-lines">
+  <div class="bg-lines no-gutters">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
@@ -29,11 +29,15 @@ export default {
 
 <style lang="scss">
 .bg-lines {
+  position: fixed;
   @include make-row();
+  width: 100%;
   height: 100%;
+  z-index: -1;
   .line {
     @include make-col-ready();
     @include make-col(1);
+    padding: 0;
     border-color: $body-color-1;
     @include media-breakpoint-only(sm) {
       &:first-child,
