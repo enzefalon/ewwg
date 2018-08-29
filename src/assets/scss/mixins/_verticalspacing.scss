@@ -1,0 +1,6 @@
+@mixin vertical-spacing () {
+  margin-top: $vertical-spacing-base;
+  @include media-breakpoint-up(lg) {
+    margin-top: $vertical-spacing-base*2;
+  }
+}

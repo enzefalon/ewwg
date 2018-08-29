@@ -1,5 +1,4 @@
 export default class WindowResizeListener {
-
   constructor(routerInstance, delay = 250) {
     this.router = routerInstance;
     this.timeout = false;
@@ -10,7 +9,7 @@ export default class WindowResizeListener {
   initWindowResizeHandler() {
     window.addEventListener("resize", () => {
       this.stopTimer();
-      this.timeout = setTimeout(() => this.getDimensions(), this.delay)
+      this.timeout = setTimeout(() => this.getDimensions(), this.delay);
     });
     this.getDimensions();
   }

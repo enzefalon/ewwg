@@ -1,14 +1,16 @@
 <template>
   <div class="site-header">
     <logo-container></logo-container>
+    <bread-crumb></bread-crumb>
   </div>
 </template>
 
 <script>
 import LogoContainer from "@/components/base/LogoContainer";
+import BreadCrumb from "@/components/base/BreadCrumb";
 
 export default {
-  components: { LogoContainer },
+  components: { LogoContainer, BreadCrumb },
   props: {},
   data() {
     return {};
@@ -22,6 +24,6 @@ export default {
 <style lang="scss">
 .site-header {
   @include make-row();
-  margin: 40px 0 0;
+  @include vertical-spacing();
 }
 </style>

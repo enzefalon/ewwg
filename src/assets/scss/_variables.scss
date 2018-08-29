@@ -136,9 +136,11 @@ $font-size-base: 1rem;
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $grid-breakpoints: (
-  sm: 0,
+  xs: 0,
+  sm: 545px,
   md: 769px,
-  lg: 1021px
+  lg: 1025px,
+  xl: 1440px
 );
 
 $grid-columns: 12;
@@ -150,3 +152,9 @@ $grid-gutter-width: 20px;
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $transition-base: all .2s ease-in-out;
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Vertical Spacing
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$vertical-spacing-base: $grid-gutter-width;

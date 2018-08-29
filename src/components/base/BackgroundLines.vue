@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-lines no-gutters">
+  <div class="bg-lines">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
@@ -38,8 +38,8 @@ export default {
     @include make-col-ready();
     @include make-col(1);
     padding: 0;
-    border-color: $body-color-1;
-    @include media-breakpoint-only(sm) {
+    border-color: inherit;
+    @include media-breakpoint-between(xs, sm) {
       &:first-child,
       &:nth-child(6),
       &:nth-child(11) {
@@ -69,9 +69,9 @@ export default {
   }
 }
 .theme-2 .bg-lines .line {
-  border-color: $body-color-2;
+  //border-color: $body-color-2;
 }
 .theme-3 .bg-lines .line {
-  border-color: $body-color-3;
+  //border-color: $body-color-3;
 }
 </style>

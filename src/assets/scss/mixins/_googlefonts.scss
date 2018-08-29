@@ -85,7 +85,6 @@ $google-font-subsets: (
   @if not variable-exists(google-font-subsets) {
     $google-font-subsets: () !global;
   }
-
   //  append italic to weights
   @if index($styles, italic) and not str-index($weights+'',i) {
     $wgt: if(index($styles, normal), $weights, ());
@@ -94,7 +93,6 @@ $google-font-subsets: (
     }
     $weights: $wgt;
   }
-
   //  reduce and encode text
   @if $text {
     $list: __gf__list-unique(__gf__str-explode($text));
@@ -108,7 +106,6 @@ $google-font-subsets: (
       $text: $text + $char;
     }
   }
-
   //  subsets from config
   $subset: '';
   @each $set, $enabled in $google-font-subsets {
@@ -117,7 +114,6 @@ $google-font-subsets: (
     }
   }
   $subset: if(str-length($subset) > 0 and $subset != latin, '&subset=' + $subset, '');
-
   @if $name {
     //  replace name whitespaces
     $name: if(type-of($name) == string, unquote($name), $name);
