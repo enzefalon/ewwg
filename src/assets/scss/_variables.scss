@@ -112,6 +112,14 @@ $body-color-3: theme-color($theme-colors-3, "primary");
 $body-bg: $black;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Fonts
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$font-family-base: 'Montserrat', sans-serif;
+$font-family-icons: 'gallery_icons';
+$font-size-base: 1rem;
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Fonts weights
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
@@ -122,14 +130,6 @@ $font-weight-bold: 700;
 
 $font-weight-base: $font-weight-medium;
 $line-height-base: 1.5;
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  Fonts
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-$font-family-base: 'Montserrat', sans-serif;
-$font-family-icons: 'gallery_icons';
-$font-size-base: 1rem;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Grid
