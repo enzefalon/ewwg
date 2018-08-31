@@ -8,6 +8,7 @@ html, body, #app {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   &.theme-2 {
     color:  $body-color-2;
   }

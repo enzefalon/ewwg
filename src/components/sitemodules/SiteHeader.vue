@@ -24,6 +24,6 @@ export default {
 <style lang="scss">
 .site-header {
   @include make-row();
-  @include vertical-spacing();
+  @include vertical-spacing(true);
 }
 </style>
