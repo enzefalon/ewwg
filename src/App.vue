@@ -1,7 +1,8 @@
 <template>
-  <div id="app" class="theme-1">
+  <div id="app" class="theme-1" :class="getRouteClass">
     <background-lines></background-lines>
     <site-header></site-header>
+    <router-view></router-view>
     <site-footer></site-footer>
   </div>
 </template>
@@ -10,15 +11,38 @@
 import BackgroundLines from "@/components/base/BackgroundLines";
 import SiteHeader from "@/components/sitemodules/SiteHeader";
 import SiteFooter from "@/components/sitemodules/SiteFooter";
+import WindowResizeListener from "@/assets/js/WindowResizeListener";
+import Config from "@/assets/js/Config";
 
 export default {
-  components: { BackgroundLines, SiteHeader, SiteFooter },
+  components: {
+    BackgroundLines,
+    SiteHeader,
+    SiteFooter
+  },
   props: {},
   data() {
-    return {};
+    return {
+      resizeInstance: null
+    };
   },
-  computed: {},
-  methods: {},
+  computed: {
+    getRouteClass() {
+      return this.$route.name;
+    }
+  },
+  methods: {
+    initResize() {
+      this.resizeInstance = new WindowResizeListener(
+        this.$store,
+        Config.DELAY_WINDOW_RESIZE,
+        Config.MOBILE_BREAKPOINT
+      );
+    }
+  },
+  mounted() {
+    this.initResize();
+  },
   name: "App"
 };
 </script>
