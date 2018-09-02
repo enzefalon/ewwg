@@ -1,17 +1,12 @@
 <template>
   <div class="logo-container">
-    <icon-base width="240" height="240">
-      <logo-vector></logo-vector>
-    </icon-base>
+    <span class="icon icon-logo"></span>
   </div>
 </template>
 
 <script>
-import IconBase from "@/components/base/IconBase";
-import LogoVector from "@/components/svg/LogoVector";
-
 export default {
-  components: { IconBase, LogoVector },
+  components: {},
   props: {},
   data() {
     return {};
@@ -30,6 +25,11 @@ export default {
   @include media-breakpoint-up(md) {
     @include make-col-offset(0);
     @include make-col(1);
+  }
+  .icon-logo {
+    @extend .bold-8-primary;
+    font-weight: $font-weight-normal;
+    line-height: 1px;
   }
 }
 </style>

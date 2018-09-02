@@ -1,6 +1,6 @@
 <template>
   <div class="bread-crumb">
-    <head-line></head-line>
+    <head-line :content="'Login'" class="bold-3-primary"></head-line>
   </div>
 </template>
 
@@ -22,10 +22,13 @@ export default {
 <style lang="scss">
 .bread-crumb {
   @include make-col-ready();
-  @include make-col(4);
+  @include make-col-offset(2);
+  @include make-col(6);
+  text-align: right;
   @include media-breakpoint-up(md) {
     @include make-col-offset(1);
     @include make-col(2);
+    text-align: left;
   }
 }
 </style>

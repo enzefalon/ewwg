@@ -112,12 +112,36 @@ $body-color-3: theme-color($theme-colors-3, "primary");
 $body-bg: $black;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//  Grid
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 545px,
+  md: 769px,
+  lg: 1025px,
+  xl: 1440px,
+  max: 1920px
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 2.0833vw;
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Fonts
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 $font-family-base: 'Montserrat', sans-serif;
 $font-family-icons: 'gallery_icons';
 $font-size-base: 1rem;
+$map-fontsizes-base: (
+  300px: 14px,
+  breakpoint-min(sm): 16px,
+  breakpoint-min(md): 16px,
+  breakpoint-min(lg): 14px,
+  breakpoint-min(xl): 18px,
+  breakpoint-min(max): 20px
+);
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Fonts weights
@@ -129,32 +153,13 @@ $font-weight-medium: 500;
 $font-weight-bold: 700;
 
 $font-weight-base: $font-weight-medium;
-$line-height-base: 1.5;
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  Grid
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 545px,
-  md: 769px,
-  lg: 1025px,
-  xl: 1440px
-);
-
-$grid-columns: 12;
-$grid-gutter-width: 20px;
+$line-height-base: 1.2;
 
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Transition
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$transition-base: all .2s ease-in-out;
-
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//  Vertical Spacing
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-$vertical-spacing-base: $grid-gutter-width;
+$transition-base-time: .2s;
+$transition-base-animation: ease-in-out;
+$transition-base: all $transition-base-time $transition-base-animation;

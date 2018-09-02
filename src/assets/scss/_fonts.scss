@@ -13,8 +13,8 @@
 @font-face {
   font-family: 'gallery_icons';
   src: url('~@/assets/fonts/gallery_icons.woff2') format('woff2'),
-    url('~@/assets/fonts/gallery_icons.woff') format('woff'),
-    url('~@/assets/fonts/gallery_icons.ttf') format('truetype');
+  url('~@/assets/fonts/gallery_icons.woff') format('woff'),
+  url('~@/assets/fonts/gallery_icons.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,12 +28,9 @@
   text-decoration: inherit;
   width: 1em;
   line-height: 1em;
-  margin-left: .2em;
-  margin-right: .2em;
   text-align: center;
   font-variant: normal;
   text-transform: none;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -81,6 +78,10 @@
   content: '\e80a';
 }
 
+.icon-logo:before {
+  content: '\e80b';
+}
+
 .icon-sort-name-up:before {
   content: '\f15d';
 }
@@ -92,4 +93,3 @@
 .icon-user-o:before {
   content: '\f2c0';
 }
-

@@ -2,6 +2,7 @@
   <div id="app" class="theme-1" :class="getRouteClass">
     <background-lines></background-lines>
     <site-header></site-header>
+    <!-- TODO add ContentContainer -->
     <router-view></router-view>
     <site-footer></site-footer>
   </div>

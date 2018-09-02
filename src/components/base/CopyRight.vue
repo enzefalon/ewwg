@@ -1,5 +1,5 @@
 <template>
-  <p class="copyright">&copy; 2018 Eva Winkler</p>
+  <p class="copyright" v-text="getCopyRight"></p>
 </template>
 
 <script>
@@ -9,7 +9,11 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    getCopyRight() {
+      return "© " + new Date().getFullYear() + " E. Winkler";
+    }
+  },
   methods: {},
   name: "CopyRight"
 };
@@ -18,12 +22,27 @@ export default {
 <style lang="scss">
 .copyright {
   @include make-col-ready();
-  @include make-col-offset(6);
-  @include make-col(5);
+  @include make-col-offset(5);
+  @include make-col(6);
   @include media-breakpoint-up(md) {
-    @include make-col-offset(10);
-    @include make-col(2);
+    @include make-col-offset(9);
+    @include make-col(3);
   }
+  $map-copyright: (
+    300px: 14px,
+    breakpoint-min(sm): 15px,
+    breakpoint-min(md): 12px,
+    breakpoint-min(lg): 14px,
+    breakpoint-min(xl): 16px,
+    breakpoint-min(max): 18px
+  );
+  @include font-style(
+    $font-family-base,
+    $map-copyright,
+    $line-height-base,
+    $font-weight-medium,
+    inherit
+  );
   text-align: right;
 }
 </style>

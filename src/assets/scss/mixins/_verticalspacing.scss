@@ -1,14 +1,8 @@
 @mixin vertical-spacing ($atStart: true, $atEnd: false) {
   @if $atStart {
-    margin-top: $vertical-spacing-base;
-    @include media-breakpoint-up(lg) {
-      margin-top: $vertical-spacing-base*2;
-    }
+    @include poly-fluid-sizing('margin-top', (300px:20px, breakpoint-min(xl): 40px));
   }
   @if $atEnd {
-    margin-bottom: $vertical-spacing-base;
-    @include media-breakpoint-up(lg) {
-      margin-bottom: $vertical-spacing-base*2;
-    }
+    @include poly-fluid-sizing('margin-bottom', (300px:20px, breakpoint-min(xl): 40px));
   }
 }

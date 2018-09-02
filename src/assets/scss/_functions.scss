@@ -2,7 +2,7 @@
 //  Retrieve Theme Color
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@function theme-color( $theme-color-set: $theme-colors-1, $key: "primary") {
+@function theme-color($theme-color-set: $theme-colors-1, $key: "primary") {
   @return map-get($theme-color-set, $key);
 }
 
