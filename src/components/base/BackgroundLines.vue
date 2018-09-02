@@ -39,6 +39,7 @@ export default {
     @include make-col(1);
     padding: 0;
     border-color: inherit;
+    @include transition();
     @include media-breakpoint-between(xs, sm) {
       &:first-child,
       &:nth-child(6),

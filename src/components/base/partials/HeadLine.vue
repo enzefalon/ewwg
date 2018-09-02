@@ -1,7 +1,3 @@
-<template>
-  <h1 v-text="content">Testtext</h1>
-</template>
-
 <script>
 export default {
   components: {},
@@ -10,13 +6,13 @@ export default {
       type: String,
       default: ""
     },
-    cssClass: {
-      type: String,
-      default: ""
-    },
     type: {
       type: String,
       default: "h1"
+    },
+    elemclass: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -24,6 +20,15 @@ export default {
   },
   computed: {},
   methods: {},
+  render: function(createElement) {
+    return createElement(
+      this.type,
+      {
+        class: this.elemclass
+      },
+      this.content
+    );
+  },
   name: "HeadLine"
 };
 </script>

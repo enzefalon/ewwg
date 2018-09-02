@@ -1,12 +1,16 @@
 <template>
   <div class="logo-container">
-    <span class="icon icon-logo"></span>
+    <link-element>
+      <span class="icon icon-logo"></span>
+    </link-element>
   </div>
 </template>
 
 <script>
+import LinkElement from "@/components/base/partials/LinkElement";
+
 export default {
-  components: {},
+  components: { LinkElement },
   props: {},
   data() {
     return {};

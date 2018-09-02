@@ -1,22 +1,36 @@
 import Vue from "vue";
 import Router from "vue-router";
-import LoginView from "@/views/LoginView";
+import AddRouterClasses from "@/assets/js/AddRouterClasses";
 
 Vue.use(Router);
 
-export default new Router({
+
+const addRouterClassInstance = new AddRouterClasses();
+
+const loadView = function(view) {
+  return () =>
+    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
+};
+
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
-      name: "start",
-      redirect: "/login"
+      name: "root",
+      redirect: "/login",
+      meta: {
+        bodyClass: ""
+      }
     },
     {
       path: "/login",
       name: "login",
-      component: LoginView
+      component: loadView("LoginView"),
+      meta: {
+        bodyClass: "login"
+      }
     },
     {
       path: "*",
@@ -25,3 +39,11 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  let additionalClassName = addRouterClassInstance.updateClassFromRoute(to);
+  document.documentElement.className = (document.documentElement.className + additionalClassName).trim();
+  next();
+});
+
+export default router;

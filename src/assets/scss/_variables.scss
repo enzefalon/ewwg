@@ -138,7 +138,7 @@ $map-fontsizes-base: (
   300px: 14px,
   breakpoint-min(sm): 16px,
   breakpoint-min(md): 16px,
-  breakpoint-min(lg): 14px,
+  breakpoint-min(lg): 16px,
   breakpoint-min(xl): 18px,
   breakpoint-min(max): 20px
 );
@@ -160,6 +160,6 @@ $line-height-base: 1.2;
 //  Transition
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$transition-base-time: .2s;
+$transition-base-time: .24s;
 $transition-base-animation: ease-in-out;
 $transition-base: all $transition-base-time $transition-base-animation;

@@ -1,14 +1,17 @@
 <template>
   <div class="bread-crumb">
-    <head-line :content="'Login'" class="bold-3-primary"></head-line>
+    <link-element>
+      <head-line :content="'Login'" :type="'h1'" class="bold-3-primary"></head-line>
+    </link-element>
   </div>
 </template>
 
 <script>
+import LinkElement from "@/components/base/partials/LinkElement";
 import HeadLine from "@/components/base/partials/HeadLine";
 
 export default {
-  components: { HeadLine },
+  components: { HeadLine, LinkElement },
   props: {},
   data() {
     return {};

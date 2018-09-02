@@ -9,7 +9,7 @@
   font-weight: $weight;
   color: $color;
   @include poly-fluid-sizing('font-size', $sizes);
-  @include transition(font-size, $transition-base-time $transition-base-animation);
+  @include transition();
   @if $spacing {
     letter-spacing: $spacing;
   }

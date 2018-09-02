@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="theme-1" :class="getRouteClass">
+  <div id="app" class="theme-1">
     <background-lines></background-lines>
     <site-header></site-header>
     <!-- TODO add ContentContainer -->
@@ -27,11 +27,7 @@ export default {
       resizeInstance: null
     };
   },
-  computed: {
-    getRouteClass() {
-      return this.$route.name;
-    }
-  },
+  computed: {},
   methods: {
     initResize() {
       this.resizeInstance = new WindowResizeListener(
