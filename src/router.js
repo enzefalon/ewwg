@@ -4,13 +4,12 @@ import AddRouterClasses from "@/assets/js/AddRouterClasses";
 
 Vue.use(Router);
 
-
-const addRouterClassInstance = new AddRouterClasses();
-
 const loadView = function(view) {
   return () =>
     import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
 };
+
+const addRouterClassInstance = new AddRouterClasses(document.documentElement);
 
 const router = new Router({
   mode: "history",
@@ -33,6 +32,14 @@ const router = new Router({
       }
     },
     {
+      path: "/test",
+      name: "test",
+      component: loadView("LoginView"),
+      meta: {
+        bodyClass: "test"
+      }
+    },
+    {
       path: "*",
       name: "fallback",
       redirect: "/"
@@ -41,8 +48,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  let additionalClassName = addRouterClassInstance.updateClassFromRoute(to);
-  document.documentElement.className = (document.documentElement.className + additionalClassName).trim();
+  addRouterClassInstance.updateClassFromRoute(to, from);
   next();
 });
 

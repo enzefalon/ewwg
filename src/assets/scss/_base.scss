@@ -15,4 +15,17 @@ html, body, #app {
   &.theme-3 {
     color: $body-color-3;
   }
+  .mainView {
+    @include make-row();
+    @include vertical-spacing(true);
+    .mainViewContainer {
+      @include make-col-ready();
+      @include make-col-offset(1);
+      @include make-col(10);
+      @include media-breakpoint-up(md) {
+        @include make-col-offset(2);
+        @include make-col(8);
+      }
+    }
+  }
 }

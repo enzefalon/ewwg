@@ -1,26 +1,34 @@
 export default class AddRouterClasses {
-  constructor(routerInstance) {
-    this.routerInstance = routerInstance;
+  constructor(domElement) {
+    this.domElement = domElement;
   }
 
-  updateClassFromRoute(route) {
-    var routeClass = this.getClassForRoute(route);
-    let className = "";
+  updateClassFromRoute(to, from) {
+    let routeTargetClass = AddRouterClasses.getClassForRoute(to);
+    let routeCurrentClass = AddRouterClasses.getClassForRoute(from);
 
-    if (routeClass) {
-      let routeBodyClass = routeClass.replace(/^!/, "");
-
-      if (routeClass.indexOf("!") === 0) {
-        className = " " + routeBodyClass;
-      } else {
-        className += " " + routeBodyClass;
-      }
+    if (routeCurrentClass && routeCurrentClass !== routeTargetClass) {
+      this.removeClassFromElement(routeCurrentClass);
     }
 
-    return className;
+    if (routeTargetClass) {
+      this.addClassToElement(routeTargetClass);
+    }
   }
 
-  getClassForRoute(route) {
+  removeClassFromElement(classStr) {
+    if (this.domElement.classList.contains(classStr)) {
+      this.domElement.classList.remove(classStr);
+    }
+  }
+
+  addClassToElement(classStr) {
+    if (!this.domElement.classList.contains(classStr)) {
+      this.domElement.classList.add(classStr);
+    }
+  }
+
+  static getClassForRoute(route) {
     return route.meta ? route.meta.bodyClass : route.name;
   }
 }
