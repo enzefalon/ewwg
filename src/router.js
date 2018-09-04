@@ -1,13 +1,16 @@
 import Vue from "vue";
 import Router from "vue-router";
 import AddRouterClasses from "@/assets/js/AddRouterClasses";
+import LoginView from "@/views/LoginView";
+
+//  TODO: research code splitting (especially css splitting) -> hundreds of css rules get doubled with splitting ....
 
 Vue.use(Router);
 
-const loadView = function(view) {
-  return () =>
-    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
-};
+//const loadView = function(view) {
+//  return () =>
+//    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
+//};
 
 const addRouterClassInstance = new AddRouterClasses(document.documentElement);
 
@@ -26,17 +29,9 @@ const router = new Router({
     {
       path: "/login",
       name: "login",
-      component: loadView("LoginView"),
+      component: LoginView,
       meta: {
         bodyClass: "login"
-      }
-    },
-    {
-      path: "/test",
-      name: "test",
-      component: loadView("LoginView"),
-      meta: {
-        bodyClass: "test"
       }
     },
     {

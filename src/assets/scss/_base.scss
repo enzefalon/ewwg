@@ -1,5 +1,5 @@
 html, body, #app {
-  min-height: 100vh;
+  height: 100vh;
   //overflow: hidden;
 }
 
@@ -27,5 +27,12 @@ html, body, #app {
         @include make-col(8);
       }
     }
+  }
+}
+
+a {
+  &:focus,
+  &.focus {
+    outline: 0;
   }
 }

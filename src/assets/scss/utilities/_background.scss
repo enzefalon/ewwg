@@ -4,6 +4,6 @@
 @each $color, $value in $theme-colors-2 {
   @include bg-variant(".bg-theme2-#{$color}", $value);
 }
-@each $color, $value in $theme-colors-2 {
+@each $color, $value in $theme-colors-3 {
   @include bg-variant(".bg-theme3-#{$color}", $value);
 }

@@ -39,4 +39,10 @@ export default {
   padding: 0.25em 0.85em;
   border-radius: 0.85em;
 }
+.theme-2 .cta {
+  @extend .bg-theme2-primary;
+}
+.theme-3 .cta {
+  @extend .bg-theme3-primary;
+}
 </style>
