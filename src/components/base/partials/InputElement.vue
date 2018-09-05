@@ -1,11 +1,24 @@
 <template>
-  <div class="input-complete">
+  <div class="input-complete" ref="inputContainer">
     <div class="label-input">
-      <input class="text-input" type="email" autocomplete="username" spellcheck="false" name="" autocapitalize="none" id="" aria-label="E-Mail oder Telefonnummer"/>
-      <div class="label" aria-hidden="true">E-Mail oder Telefonnummer</div>
+      <input
+        ref="inputField"
+        :disabled="disabledInput"
+        :reuqired="requiredInput"
+        @focus="onInputFocus"
+        @blur="onInputBlur"
+        class="text-input"
+        :type="type"
+        :id="idInput"
+        :name="name"
+        autocomplete="username"
+        spellcheck="false"
+        autocapitalize="none"
+        :aria-label="labelInput"/>
+      <div class="label" aria-hidden="true" v-text="labelInput"></div>
     </div>
     <div class="line-basic"></div>
-    <div class="line-ani"></div>
+    <div class="line-ani" ref="aniLine"></div>
   </div>
 </template>
 
@@ -13,9 +26,9 @@
 export default {
   components: {},
   props: {
-    label: {
+    labelInput: {
       type: String,
-      default: ""
+      default: "E-Mail oder Username"
     },
     type: {
       type: String,
@@ -27,18 +40,50 @@ export default {
     },
     name: {
       type: String,
-      default: ""
+      default: "username"
     },
-    id: {
+    idInput: {
       type: String,
-      default: ""
+      default: "user"
+    },
+    disabledInput: {
+      type: Boolean,
+      default: false
+    },
+    requiredInput: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {};
   },
   computed: {},
-  methods: {},
+  methods: {
+    onInputFocus() {
+      console.log(this.$refs.inputContainer);
+      if (
+        this.$refs &&
+        this.$refs.aniLine &&
+        this.$refs.aniLine.classList &&
+        !this.$refs.aniLine.classList.contains("active")
+      ) {
+        this.$refs.aniLine.classList.add("active");
+      }
+    },
+    onInputBlur() {
+      if (
+        this.$refs &&
+        this.$refs.aniLine &&
+        this.$refs.aniLine.classList &&
+        this.$refs.aniLine.classList.contains("active")
+      ) {
+        this.$refs.aniLine.classList.remove("active");
+      }
+      // TODO: check if input has value => new css rule for label to not come down if positive
+      console.log(this.$refs.inputField.value);
+    }
+  },
   name: "InputElement"
 };
 </script>
@@ -54,6 +99,7 @@ export default {
     flex-shrink: 1;
     min-width: 0;
     .text-input {
+      width: 100%;
       color: inherit;
       flex-grow: 1;
       flex-shrink: 1;
@@ -70,14 +116,22 @@ export default {
     }
     .label {
       pointer-events: none;
+      color: theme-color($theme-colors-1, "tertiary");
       position: absolute;
       bottom: 3px;
       left: 0;
       width: 100%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: color, bottom, transform;
+      transform-origin: bottom left;
+    }
+    .text-input:not([disabled]):focus ~ .label {
+      color: theme-color($theme-colors-1, "primary");
+      transform: scale(0.75) translateY(-39px);
     }
   }
   .line-basic {
-    @extend .bg-theme1-primary;
+    @extend .bg-theme1-tertiary;
     position: absolute;
     bottom: -2px;
     height: 1px;
@@ -97,8 +151,8 @@ export default {
     }
   }
   .line-ani {
-    transform: scaleX(0);
     @extend .bg-theme1-primary;
+    transform: scaleX(0);
     bottom: -2px;
     height: 2px;
     left: 0;
@@ -106,6 +160,10 @@ export default {
     padding: 0;
     position: absolute;
     width: 100%;
+    transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+    &.active {
+      transform: scaleX(1);
+    }
   }
 }
 </style>
