@@ -18,7 +18,7 @@
       <div class="label" aria-hidden="true" v-text="labelInput"></div>
     </div>
     <div class="line-basic"></div>
-    <div class="line-ani" ref="aniLine"></div>
+    <div class="line-ani"></div>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
   props: {
     labelInput: {
       type: String,
-      default: "E-Mail oder Username"
+      default: ""
     },
     type: {
       type: String,
@@ -40,11 +40,11 @@ export default {
     },
     name: {
       type: String,
-      default: "username"
+      default: ""
     },
     idInput: {
       type: String,
-      default: "user"
+      default: ""
     },
     disabledInput: {
       type: Boolean,
@@ -61,27 +61,26 @@ export default {
   computed: {},
   methods: {
     onInputFocus() {
-      console.log(this.$refs.inputContainer);
       if (
         this.$refs &&
-        this.$refs.aniLine &&
-        this.$refs.aniLine.classList &&
-        !this.$refs.aniLine.classList.contains("active")
+        this.$refs.inputContainer &&
+        this.$refs.inputContainer.classList &&
+        !this.$refs.inputContainer.classList.contains("active")
       ) {
-        this.$refs.aniLine.classList.add("active");
+        this.$refs.inputContainer.classList.add("active");
       }
     },
     onInputBlur() {
       if (
         this.$refs &&
-        this.$refs.aniLine &&
-        this.$refs.aniLine.classList &&
-        this.$refs.aniLine.classList.contains("active")
+        this.$refs.inputContainer &&
+        this.$refs.inputContainer.classList &&
+        this.$refs.inputContainer.classList.contains("active") &&
+        this.$refs.inputField &&
+        this.$refs.inputField.value === ""
       ) {
-        this.$refs.aniLine.classList.remove("active");
+        this.$refs.inputContainer.classList.remove("active");
       }
-      // TODO: check if input has value => new css rule for label to not come down if positive
-      console.log(this.$refs.inputField.value);
     }
   },
   name: "InputElement"
@@ -101,13 +100,15 @@ export default {
     .text-input {
       width: 100%;
       color: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
       flex-grow: 1;
       flex-shrink: 1;
       background-color: transparent;
       border: none;
       display: block;
-      height: 24px;
-      line-height: 24px;
+      height: 1.25em;
+      line-height: 1.25em;
       margin: 0;
       min-width: 0;
       outline: none;
@@ -116,22 +117,18 @@ export default {
     }
     .label {
       pointer-events: none;
-      color: theme-color($theme-colors-1, "tertiary");
+      color: theme-color($theme-colors-1, "secondary");
       position: absolute;
-      bottom: 3px;
+      bottom: 0;
       left: 0;
       width: 100%;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transition-property: color, bottom, transform;
       transform-origin: bottom left;
     }
-    .text-input:not([disabled]):focus ~ .label {
-      color: theme-color($theme-colors-1, "primary");
-      transform: scale(0.75) translateY(-39px);
-    }
   }
   .line-basic {
-    @extend .bg-theme1-tertiary;
+    @extend .bg-theme1-secondary;
     position: absolute;
     bottom: -2px;
     height: 1px;
@@ -154,15 +151,55 @@ export default {
     @extend .bg-theme1-primary;
     transform: scaleX(0);
     bottom: -2px;
-    height: 2px;
+    height: 1px;
     left: 0;
     margin: 0;
     padding: 0;
     position: absolute;
     width: 100%;
     transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
-    &.active {
-      transform: scaleX(1);
+  }
+}
+
+.input-complete.active {
+  .label {
+    color: inherit;
+    transform: scale(0.5) translateY(-3em);
+  }
+  .line-ani {
+    transform: scaleX(1);
+  }
+}
+
+.theme-2 {
+  .input-complete {
+    .label {
+      color: theme-color($theme-colors-2, "secondary");
+    }
+    &.active .label {
+      color: inherit;
+    }
+    .line-basic {
+      @extend .bg-theme2-secondary;
+    }
+    .line-ani {
+      @extend .bg-theme2-primary;
+    }
+  }
+}
+.theme-3 {
+  .input-complete {
+    .label {
+      color: theme-color($theme-colors-3, "secondary");
+    }
+    &.active .label {
+      color: inherit;
+    }
+    .line-basic {
+      @extend .bg-theme3-secondary;
+    }
+    .line-ani {
+      @extend .bg-theme3-primary;
     }
   }
 }

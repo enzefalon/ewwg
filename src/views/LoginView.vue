@@ -2,7 +2,7 @@
   <div class="mainView">
     <div class="mainViewContainer">
       <cta-button :content="'Einloggen'"></cta-button>
-      <input-element></input-element>
+      <input-element class="bold-2_25-primary"></input-element>
     </div>
   </div>
 </template>
