@@ -17,7 +17,6 @@ html, body, #app {
   }
   .mainView {
     @include make-row();
-    @include vertical-spacing(true);
     .mainViewContainer {
       @include make-col-ready();
       @include make-col-offset(1);

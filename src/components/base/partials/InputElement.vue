@@ -10,7 +10,7 @@
         class="text-input"
         :type="type"
         :id="idInput"
-        :name="name"
+        :name="nameInput"
         autocomplete="username"
         spellcheck="false"
         autocapitalize="none"
@@ -38,7 +38,7 @@ export default {
       type: Number,
       default: 0
     },
-    name: {
+    nameInput: {
       type: String,
       default: ""
     },

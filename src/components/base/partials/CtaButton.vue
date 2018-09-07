@@ -11,7 +11,7 @@ export default {
   props: {
     content: {
       type: String,
-      default: "Text missing"
+      default: ""
     },
     target: {
       type: String,
