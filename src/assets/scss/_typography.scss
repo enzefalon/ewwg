@@ -43,13 +43,13 @@ $map-0_75: (
 //
 
 .bold-8-black {
-  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, $body-bg, -.015em);
+  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, $body-bg, $letter-spacing-base);
 }
 .bold-8-dark {
-  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, $dark, -.015em);
+  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, $dark, $letter-spacing-base);
 }
 .bold-8-primary {
-  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, inherit, -.015em);
+  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, inherit, $letter-spacing-base);
 }
 
 //
@@ -57,34 +57,34 @@ $map-0_75: (
 //
 
 .bold-3-black {
-  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, $body-bg, -.015em);
+  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, $body-bg, $letter-spacing-base);
 }
 .bold-3-dark {
-  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, $dark, -.015em);
+  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, $dark, $letter-spacing-base);
 }
 .bold-3-primary {
-  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, inherit, -.015em);
+  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, inherit, $letter-spacing-base);
 }
 .bold-3-secondary {
-  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), -.015em);
+  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), $letter-spacing-base);
 }
 .bold-3-tertiary {
-  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), -.015em);
+  @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), $letter-spacing-base);
 }
 .theme-2 {
   .bold-3-secondary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), -.015em1);
+    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), $letter-spacing-base);
   }
   .bold-3-tertiary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), $letter-spacing-base);
   }
 }
 .theme-3 {
   .bold-3-secondary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), $letter-spacing-base);
   }
   .bold-3-tertiary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), $letter-spacing-base);
   }
 }
 
@@ -93,28 +93,28 @@ $map-0_75: (
 //
 
 .bold-2_25-primary {
-  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, inherit, -.015em);
+  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, inherit, $letter-spacing-base);
 }
 .bold-2_25-secondary {
-  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), -.015em);
+  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), $letter-spacing-base);
 }
 .bold-2_25-tertiary {
-  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), -.015em);
+  @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), $letter-spacing-base);
 }
 .theme-2 {
   .bold-2_25-secondary {
-    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), $letter-spacing-base);
   }
   .bold-2_25-tertiary {
-    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), $letter-spacing-base);
   }
 }
 .theme-3 {
   .bold-2_25-secondary {
-    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), $letter-spacing-base);
   }
   .bold-2_25-tertiary {
-    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-2_25, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), $letter-spacing-base);
   }
 }
 
@@ -123,28 +123,28 @@ $map-0_75: (
 //
 
 .bold-1_5-primary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, inherit, -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, inherit, $letter-spacing-base);
 }
 .bold-1_5-secondary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "secondary"), $letter-spacing-base);
 }
 .bold-1_5-tertiary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "tertiary"), $letter-spacing-base);
 }
 .theme-2 {
   .bold-1_5-secondary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "secondary"), $letter-spacing-base);
   }
   .bold-1_5-tertiary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-2, "tertiary"), $letter-spacing-base);
   }
 }
 .theme-3 {
   .bold-1_5-secondary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "secondary"), $letter-spacing-base);
   }
   .bold-1_5-tertiary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), $letter-spacing-base);
   }
 }
 
@@ -153,28 +153,28 @@ $map-0_75: (
 //
 
 .medium-1_5-primary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, inherit, -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, inherit, $letter-spacing-base);
 }
 .medium-1_5-secondary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-1, "secondary"), -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-1, "secondary"), $letter-spacing-base);
 }
 .medium-1_5-tertiary {
-  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-1, "tertiary"), -.015em);
+  @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-1, "tertiary"), $letter-spacing-base);
 }
 .theme-2 {
   .medium-1_5-secondary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-2, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-2, "secondary"), $letter-spacing-base);
   }
   .medium-1_5-tertiary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-2, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-2, "tertiary"), $letter-spacing-base);
   }
 }
 .theme-3 {
   .medium-1_5-secondary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-3, "secondary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-3, "secondary"), $letter-spacing-base);
   }
   .medium-1_5-tertiary {
-    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-3, "tertiary"), -.015em);
+    @include font-style ($font-family-base, $map-1_5, $line-height-base, $font-weight-medium, theme-color($theme-colors-3, "tertiary"), $letter-spacing-base);
   }
 }
 
