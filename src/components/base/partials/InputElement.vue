@@ -89,7 +89,8 @@ export default {
 
 <style lang="scss">
 .input-complete {
-  @include vertical-spacing(true, false);
+  @include vertical-spacing(false, true);
+  @include vertical-padding(true, false);
   position: relative;
   display: flex;
   .label-input {

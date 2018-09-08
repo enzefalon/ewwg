@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="target" :class="elemclass">
+  <router-link :to="linkTarget" :class="elemclass">
     <slot></slot>
   </router-link>
 </template>
@@ -8,7 +8,7 @@
 export default {
   components: {},
   props: {
-    target: {
+    linkTarget: {
       type: String,
       default: "/"
     },

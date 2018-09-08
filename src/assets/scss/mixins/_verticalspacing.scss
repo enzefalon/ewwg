@@ -6,3 +6,12 @@
     @include poly-fluid-sizing('margin-bottom', (300px:20px, breakpoint-min(xl): 40px));
   }
 }
+
+@mixin vertical-padding ($atStart: true, $atEnd: false) {
+  @if $atStart {
+    @include poly-fluid-sizing('padding-top', (300px:20px, breakpoint-min(xl): 40px));
+  }
+  @if $atEnd {
+    @include poly-fluid-sizing('padding-bottom', (300px:20px, breakpoint-min(xl): 40px));
+  }
+}

@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import AddRouterClasses from "@/assets/js/AddRouterClasses";
 import LoginView from "@/views/LoginView";
+import GalleryOverview from "@/views/GalleryOverview";
 
 //  TODO: research code splitting (especially css splitting) -> hundreds of css rules get doubled with splitting ....
 
@@ -31,7 +32,17 @@ const router = new Router({
       name: "login",
       component: LoginView,
       meta: {
-        bodyClass: "login"
+        bodyClass: "login",
+        navPointName: "Login"
+      }
+    },
+    {
+      path: "/gallery",
+      name: "gallery",
+      component: GalleryOverview,
+      meta: {
+        bodyClass: "gallery-overview",
+        navPointName: "Gallerie"
       }
     },
     {

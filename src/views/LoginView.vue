@@ -18,7 +18,11 @@
           :idInput="'pass'"
           :requiredInput="true"
           class="bold-2_25-primary"/>
-        <cta-button :content="'Einloggen'"></cta-button>
+        <cta-button
+          :content="'Einloggen'"
+          :tabIndex="3"
+          :link-target="'/gallery'"
+          class="login-cta" />
       </form>
     </div>
   </div>
@@ -41,4 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
+.login-cta {
+  float: right;
+}
 </style>

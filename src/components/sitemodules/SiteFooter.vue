@@ -6,6 +6,7 @@
 
 <script>
 import CopyRight from "@/components/base/CopyRight";
+
 export default {
   components: { CopyRight },
   props: {},

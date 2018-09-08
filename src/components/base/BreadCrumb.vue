@@ -1,7 +1,7 @@
 <template>
   <div class="bread-crumb">
     <link-element>
-      <head-line :content="'Login'" :type="'h1'" class="bold-3-primary"></head-line>
+      <head-line :content="getBreadcrump" :type="'h1'" class="bold-3-primary"></head-line>
     </link-element>
   </div>
 </template>
@@ -16,7 +16,11 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    getBreadcrump() {
+      return this.$route.meta.navPointName ? this.$route.meta.navPointName : "";
+    }
+  },
   methods: {},
   name: "BreadCrumb"
 };

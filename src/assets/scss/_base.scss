@@ -17,6 +17,8 @@ html, body, #app {
   }
   .mainView {
     @include make-row();
+    @include vertical-spacing(true, true);
+    flex-grow: 1;
     .mainViewContainer {
       @include make-col-ready();
       @include make-col-offset(1);
@@ -28,6 +30,22 @@ html, body, #app {
     }
   }
 }
+
+.login #app {
+  .mainView {
+    flex-direction: column;
+    justify-content: center;
+    .mainViewContainer {
+      @include make-col-offset(2);
+      @include make-col(8);
+      @include media-breakpoint-up(md) {
+        @include make-col-offset(3);
+        @include make-col(6);
+      }
+    }
+  }
+}
+
 
 a {
   &:focus,
