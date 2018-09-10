@@ -1,6 +1,8 @@
 <template>
-  <div class="embed-responsive embed-responsive-16by9">
-    <img class="embed-responsive-item" :src="mediaPath" :alt="altText">
+  <div>
+    <div class="embed-responsive embed-responsive-16by9">
+      <img class="embed-responsive-item" :src="mediaPath" :alt="altText">
+    </div>
   </div>
 </template>
 

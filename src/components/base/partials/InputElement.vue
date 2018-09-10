@@ -132,7 +132,7 @@ export default {
     @extend .bg-theme1-secondary;
     position: absolute;
     bottom: -2px;
-    height: 1px;
+    height: $border-base-width;
     left: 0;
     margin: 0;
     padding: 0;
@@ -144,7 +144,7 @@ export default {
       bottom: -2px;
       left: 0;
       right: 0;
-      border-bottom: 1px solid inherit;
+      border-bottom: $border-base-width solid inherit;
       pointer-events: none;
     }
   }

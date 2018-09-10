@@ -126,6 +126,7 @@ $grid-breakpoints: (
 
 $grid-columns: 12;
 $grid-gutter-width: 2.0833vw;
+$border-base-width: 1px;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Fonts
@@ -137,11 +138,11 @@ $font-size-base: 1rem;
 $letter-spacing-base: -.015em;
 $map-fontsizes-base: (
   300px: 14px,
-  breakpoint-min(sm): 16px,
+  breakpoint-min(sm): 15px,
   breakpoint-min(md): 16px,
   breakpoint-min(lg): 16px,
-  breakpoint-min(xl): 18px,
-  breakpoint-min(max): 20px
+  breakpoint-min(xl): 17px,
+  breakpoint-min(max): 18px
 );
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––

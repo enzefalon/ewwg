@@ -1,6 +1,6 @@
 @mixin bg-variant($parent, $color) {
   #{$parent} {
-    border: 1px solid $color;
+    border: $border-base-width solid $color;
     background-color: transparent !important;
   }
   a#{$parent},

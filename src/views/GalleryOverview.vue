@@ -1,18 +1,23 @@
 <template>
   <div class="mainView">
     <div class="mainViewContainer">
-      <div class="galleryPreview no-gutters">
-        <div class="col-6 col-md-3 pr">
-          <media-preview :media-path="getTemporaryPath"/>
+      <div class="galleryPreview">
+        <div class="preview-card">
+          <preview-card
+            :media-path="getTemporaryPath"/>
+
         </div>
-        <div class="col-6 col-md-3 pr">
-          <media-preview :media-path="getTemporaryPath"/>
+        <div class="preview-card">
+          <preview-card
+            :media-path="getTemporaryPath"/>
         </div>
-        <div class="col-6 col-md-3 pr">
-          <media-preview :media-path="getTemporaryPath"/>
+        <div class="preview-card">
+          <preview-card
+            :media-path="getTemporaryPath"/>
         </div>
-        <div class="col-6 col-md-3 pr">
-          <media-preview :media-path="getTemporaryPath"/>
+        <div class="preview-card">
+          <preview-card
+            :media-path="getTemporaryPath"/>
         </div>
       </div>
     </div>
@@ -20,10 +25,10 @@
 </template>
 
 <script>
-import MediaPreview from "@/components/base/partials/MediaPreview";
+import PreviewCard from "@/components/base/PreviewCard";
 
 export default {
-  components: { MediaPreview },
+  components: { PreviewCard },
   props: {},
   data() {
     return {
@@ -43,8 +48,13 @@ export default {
 <style lang="scss">
 .galleryPreview {
   @include make-row();
-  .pr {
-    padding-right: 1px;
+  .preview-card {
+    @include vertical-spacing(false, true);
+    @include make-col-ready();
+    @include make-col(6);
+    @include media-breakpoint-up(md) {
+      @include make-col(3);
+    }
   }
 }
 </style>

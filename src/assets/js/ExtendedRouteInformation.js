@@ -1,3 +1,5 @@
+//TODO: switch between store and internal array (depending on availability of store)
+
 export default class ExtendedRouteInformation {
   constructor(storeInstance, maxEntries = 10) {
     this.store = storeInstance;
@@ -16,6 +18,5 @@ export default class ExtendedRouteInformation {
       this.routesInfo.shift();
       this.routesInfo.push(to);
     }
-    console.log(this.routesInfo);
   }
 }

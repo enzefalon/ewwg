@@ -188,6 +188,9 @@ $map-0_75: (
 .medium-1-dark {
   @include font-style ($font-family-base, $map-fontsizes-base, $line-height-base, $font-weight-medium, $dark);
 }
+.medium-1-light {
+  @include font-style ($font-family-base, $map-fontsizes-base, $line-height-base, $font-weight-medium, $light);
+}
 .medium-1-primary {
   @include font-style ($font-family-base, $map-fontsizes-base, $line-height-base, $font-weight-medium, inherit);
 }

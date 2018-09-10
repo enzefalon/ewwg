@@ -44,12 +44,12 @@ export default {
       &:first-child,
       &:nth-child(6),
       &:nth-child(11) {
-        border-right: 1px solid;
+        border-right: $border-base-width solid;
       }
     }
     @include media-breakpoint-up(md) {
       &:nth-child(even) {
-        border-right: 1px solid;
+        border-right: $border-base-width solid;
       }
       &:last-child {
         border-right: none;
