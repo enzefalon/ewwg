@@ -1,5 +1,5 @@
 <template>
-  <link-element class="cta" :link-target="linkTarget">
+  <link-element class="cta" :link-target="linkTarget" :class="elemClass">
     <span v-text="content"></span>
   </link-element>
 </template>
@@ -17,9 +17,9 @@ export default {
       type: String,
       default: "/"
     },
-    elemclass: {
+    elemClass: {
       type: String,
-      default: ""
+      default: "bold-1_5-primary"
     },
     tabIndex: {
       type: Number,
@@ -37,9 +37,7 @@ export default {
 
 <style lang="scss">
 .cta {
-  @include vertical-spacing(false, true);
   @extend .d-inline-block;
-  @extend .bold-1_5-primary;
   @extend .bg-theme1-primary;
   padding: 0.25em 0.85em;
   border-radius: 0.85em;

@@ -47,5 +47,6 @@ export default {
 <style lang="scss">
 .login-cta {
   float: right;
+  @include vertical-spacing(false, true);
 }
 </style>

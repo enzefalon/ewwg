@@ -1,11 +1,19 @@
 <template>
   <div class="mainView">
     <div class="mainViewContainer">
+      <!-- TODO: make components for filter bar and gallery preview -->
+      <div class="galleryFilter">
+        <div class="preview-filter">
+          <p>Filter:</p>
+        </div>
+        <div class="preview-sort">
+          <p>Sortierung:</p>
+        </div>
+      </div>
       <div class="galleryPreview">
         <div class="preview-card">
           <preview-card
             :media-path="getTemporaryPath"/>
-
         </div>
         <div class="preview-card">
           <preview-card
@@ -46,15 +54,18 @@ export default {
 </script>
 
 <style lang="scss">
+.galleryFilter,
 .galleryPreview {
   @include make-row();
-  .preview-card {
-    @include vertical-spacing(false, true);
-    @include make-col-ready();
-    @include make-col(6);
-    @include media-breakpoint-up(md) {
-      @include make-col(3);
-    }
+}
+.preview-filter,
+.preview-sort,
+.preview-card {
+  @include vertical-spacing(false, true);
+  @include make-col-ready();
+  @include make-col(6);
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
   }
 }
 </style>
