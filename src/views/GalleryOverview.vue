@@ -1,13 +1,22 @@
 <template>
   <div class="mainView">
     <div class="mainViewContainer">
-      <!-- TODO: make components for filter bar and gallery preview -->
       <div class="galleryFilter">
         <div class="preview-filter">
-          <p>Filter:</p>
+          <p>
+            Filter:
+            <icon-button :icon-class="'icon-picture'" />
+            <icon-button :icon-class="'icon-video'" />
+            <icon-button :icon-class="'icon-playlist'" />
+          </p>
         </div>
         <div class="preview-sort">
-          <p>Sortierung:</p>
+          <p>
+            Sortierung:
+            <icon-button :icon-class="'icon-sort-name-up'" />
+            <icon-button :icon-class="'icon-sort-name-down'" />
+            <icon-button :icon-class="'icon-calendar'" />
+          </p>
         </div>
       </div>
       <div class="galleryPreview">
@@ -34,9 +43,10 @@
 
 <script>
 import PreviewCard from "@/components/base/PreviewCard";
+import IconButton from "@/components/base/partials/IconButton";
 
 export default {
-  components: { PreviewCard },
+  components: { PreviewCard, IconButton },
   props: {},
   data() {
     return {
@@ -67,5 +77,11 @@ export default {
   @include media-breakpoint-up(md) {
     @include make-col(3);
   }
+}
+.preview-filter,
+.preview-sort {
+  @extend .medium-1_5-primary;
+  line-height: 40px;
+  vertical-align: middle;
 }
 </style>
