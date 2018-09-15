@@ -26,7 +26,7 @@ export default {
   @include make-col-ready();
   @include make-col-offset(1);
   @include make-col(2);
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($breakpoint-mobile) {
     @include make-col-offset(0);
     @include make-col(1);
   }

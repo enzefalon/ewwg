@@ -5,18 +5,39 @@
         <div class="preview-filter">
           <p>
             Filter:
-            <icon-button :icon-class="'icon-picture'" />
-            <icon-button :icon-class="'icon-video'" />
-            <icon-button :icon-class="'icon-playlist'" />
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-picture'"/>
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-video'"/>
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-playlist'"/>
           </p>
         </div>
         <div class="preview-sort">
           <p>
             Sortierung:
-            <icon-button :icon-class="'icon-sort-name-up'" />
-            <icon-button :icon-class="'icon-sort-name-down'" />
-            <icon-button :icon-class="'icon-calendar'" />
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-sort-name-up'"/>
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-sort-name-down'"/>
+            <general-button
+              :button-type="'icon-btn'"
+              :elem-class="''"
+              :icon-class="'icon-calendar'"/>
           </p>
+        </div>
+        <div class="preview-search">
+          <search-field />
         </div>
       </div>
       <div class="galleryPreview">
@@ -43,10 +64,11 @@
 
 <script>
 import PreviewCard from "@/components/base/PreviewCard";
-import IconButton from "@/components/base/partials/IconButton";
+import GeneralButton from "@/components/base/partials/GeneralButton";
+import SearchField from "@/components/base/partials/SearchField";
 
 export default {
-  components: { PreviewCard, IconButton },
+  components: { PreviewCard, GeneralButton, SearchField },
   props: {},
   data() {
     return {
@@ -68,6 +90,7 @@ export default {
 .galleryPreview {
   @include make-row();
 }
+.preview-search,
 .preview-filter,
 .preview-sort,
 .preview-card {
@@ -78,10 +101,30 @@ export default {
     @include make-col(3);
   }
 }
+.preview-search,
 .preview-filter,
 .preview-sort {
   @extend .medium-1_5-primary;
-  line-height: 40px;
   vertical-align: middle;
+}
+.preview-filter {
+  order: 2;
+  @include media-breakpoint-up(md) {
+    order: 1;
+  }
+}
+.preview-sort {
+  order: 3;
+  @include media-breakpoint-up(md) {
+    order: 2;
+  }
+}
+.preview-search {
+  order: 1;
+  @include make-col-offset(6);
+  @include media-breakpoint-up(md) {
+    @include make-col-offset(3);
+    order: 3;
+  }
 }
 </style>

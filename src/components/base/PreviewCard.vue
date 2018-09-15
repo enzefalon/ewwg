@@ -16,11 +16,11 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
     <div class="preview-tags">
-      <cta-button
+      <general-button
       :content="'Abstract'"
       :elemClass="'medium-0_75-primary'"
       :tabIndex="1" />
-      <cta-button
+      <general-button
       :content="'Ambient'"
       :elemClass="'medium-0_75-primary'"
       :tabIndex="2" />
@@ -29,12 +29,12 @@
 </template>
 
 <script>
-import CtaButton from "@/components/base/partials/CtaButton";
+import GeneralButton from "@/components/base/partials/GeneralButton";
 import MediaPreview from "@/components/base/partials/MediaPreview";
 import HeadLine from "@/components/base/partials/HeadLine";
 
 export default {
-  components: { MediaPreview, HeadLine, CtaButton },
+  components: { MediaPreview, HeadLine, GeneralButton },
   props: {
     mediaPath: {
       type: String,

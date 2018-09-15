@@ -18,7 +18,7 @@
           :idInput="'pass'"
           :requiredInput="true"
           class="bold-2_25-primary"/>
-        <cta-button
+        <general-button
           :content="'Einloggen'"
           :tabIndex="3"
           :link-target="'/gallery'"
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import CtaButton from "@/components/base/partials/CtaButton";
+import GeneralButton from "@/components/base/partials/GeneralButton";
 import InputElement from "@/components/base/partials/InputElement";
 
 export default {
-  components: { CtaButton, InputElement },
+  components: { GeneralButton, InputElement },
   props: {},
   data() {
     return {};

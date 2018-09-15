@@ -1,5 +1,5 @@
 <template>
-  <div class="input-complete" ref="inputContainer">
+  <div :class="getBorderClass" class="input-complete" ref="inputContainer">
     <div class="label-input">
       <input
         ref="inputField"
@@ -53,12 +53,20 @@ export default {
     requiredInput: {
       type: Boolean,
       default: false
+    },
+    borders: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {};
   },
-  computed: {},
+  computed: {
+    getBorderClass() {
+      return this.borders ? "borders" : "";
+    }
+  },
   methods: {
     onInputFocus() {
       if (
@@ -89,10 +97,12 @@ export default {
 
 <style lang="scss">
 .input-complete {
-  @include vertical-spacing(false, true);
-  @include vertical-padding(true, false);
   position: relative;
   display: flex;
+  &.borders {
+    @include vertical-spacing(false, true);
+    @include vertical-padding(true, false);
+  }
   .label-input {
     position: relative;
     flex-grow: 1;
@@ -118,7 +128,7 @@ export default {
     }
     .label {
       pointer-events: none;
-      color: theme-color($theme-colors-1, "secondary");
+      color: theme-color($theme-colors-1, "tertiary");
       position: absolute;
       bottom: 0;
       left: 0;
@@ -175,7 +185,7 @@ export default {
 .theme-2 {
   .input-complete {
     .label {
-      color: theme-color($theme-colors-2, "secondary");
+      color: theme-color($theme-colors-2, "tertiary");
     }
     &.active .label {
       color: inherit;
@@ -191,7 +201,7 @@ export default {
 .theme-3 {
   .input-complete {
     .label {
-      color: theme-color($theme-colors-3, "secondary");
+      color: theme-color($theme-colors-3, "tertiary");
     }
     &.active .label {
       color: inherit;

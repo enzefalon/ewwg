@@ -47,7 +47,7 @@ export default {
         border-right: $border-base-width solid;
       }
     }
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up($breakpoint-mobile) {
       &:nth-child(even) {
         border-right: $border-base-width solid;
       }
@@ -61,7 +61,7 @@ export default {
   &:nth-child(6) {
     border-right: none;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($breakpoint-mobile) {
     &:nth-child(4),
     &:nth-child(6),
     &:nth-child(8) {
