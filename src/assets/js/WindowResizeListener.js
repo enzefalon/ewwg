@@ -1,16 +1,19 @@
+import MUTATIONS from "@/assets/js/mutation-types";
+
 export default class WindowResizeListener {
-  constructor(storeInstance, delay = 240, breakPoint = 769) {
+  constructor(storeInstance, delay = 240, breakPoints = []) {
     this.store = storeInstance;
     this.rAFID = null;
     this.delay = delay;
-    this.breakPoint = breakPoint;
-    this.isMobile = null;
+    this.breakPointArray = breakPoints;
+    this.activeBreakPoint = null;
     this.initWindowResizeHandler();
   }
 
   initWindowResizeHandler() {
     this.setStart();
     this.step();
+    this.getDimensions();
     window.addEventListener("resize", () => {
       this.stopTimer();
       this.rAFID = window.requestAnimationFrame(() => this.step());
@@ -27,16 +30,19 @@ export default class WindowResizeListener {
   }
 
   getDimensions() {
-    if (window.innerWidth < this.breakPoint) {
-      if (this.isMobile !== true) {
-        this.isMobile = true;
-        this.store.commit("isMobile", true);
+    if (window.innerWidth >= this.breakPointArray[1]) {
+      if (this.activeBreakPoint !== 2) {
+        this.activeBreakPoint = 2;
+        this.store.commit(MUTATIONS.ACTIVE_BREAKPOINT, 2);
       }
-    } else {
-      if (this.isMobile === true) {
-        this.isMobile = false;
-        this.store.commit("isMobile", false);
+    } else if (window.innerWidth >= this.breakPointArray[0]) {
+      if (this.activeBreakPoint !== 1) {
+        this.activeBreakPoint = 1;
+        this.store.commit(MUTATIONS.ACTIVE_BREAKPOINT, 1);
       }
+    } else if (this.activeBreakPoint !== 0) {
+      this.activeBreakPoint = 0;
+      this.store.commit(MUTATIONS.ACTIVE_BREAKPOINT, 0);
     }
   }
 

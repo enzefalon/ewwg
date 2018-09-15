@@ -18,6 +18,11 @@
   font-weight: normal;
   font-style: normal;
 }
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  position: relative;
+  padding: 0 0.08em;
+}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: 'gallery_icons';
@@ -38,6 +43,10 @@
   content: '\e800';
 }
 
+.icon-video {
+  top: -0.04em;
+}
+
 .icon-video:before {
   content: '\e801';
 }
@@ -52,6 +61,10 @@
 
 .icon-search:before {
   content: '\e804';
+}
+
+.icon-playlist {
+  top: 0.12em;
 }
 
 .icon-playlist:before {

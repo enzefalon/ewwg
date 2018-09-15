@@ -7,7 +7,7 @@
       :name-input="'searchfield'"
       :id-input="'search'"
       :required-input="true"
-      :icon-input="'search'"
+      :icon-input="'icon-search'"
       class="medium-1_5-primary"/>
   </form>
 </template>

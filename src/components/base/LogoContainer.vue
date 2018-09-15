@@ -1,6 +1,6 @@
 <template>
   <div class="logo-container">
-    <link-element>
+    <link-element :link-target="'/'">
       <span class="icon icon-logo"></span>
     </link-element>
   </div>
@@ -34,6 +34,7 @@ export default {
     @extend .bold-8-primary;
     font-weight: $font-weight-normal;
     line-height: 1px;
+    padding: 0;
   }
 }
 </style>

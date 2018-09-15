@@ -4,35 +4,29 @@
       <div class="galleryFilter">
         <div class="preview-filter">
           <p>
-            Filter:
+            <span>Filtern:</span>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-picture'"/>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-video'"/>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-playlist'"/>
           </p>
         </div>
         <div class="preview-sort">
           <p>
-            Sortierung:
+            <span>Sortieren:</span>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-sort-name-up'"/>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-sort-name-down'"/>
             <general-button
               :button-type="'icon-btn'"
-              :elem-class="''"
               :icon-class="'icon-calendar'"/>
           </p>
         </div>
@@ -108,7 +102,6 @@ export default {
 .preview-filter,
 .preview-sort {
   @extend .medium-1_5-primary;
-  vertical-align: middle;
 }
 .preview-filter {
   order: 2;

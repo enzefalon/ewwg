@@ -1,6 +1,6 @@
 <template>
   <div :class="getBorderClass" class="input-complete" ref="inputContainer">
-    <div class="label-input" :class="iconInput">
+    <div class="label-input">
       <input
         ref="inputField"
         :disabled="disabledInput"
@@ -15,6 +15,11 @@
         autocapitalize="none"
         :aria-label="labelInput"/>
       <div class="label" aria-hidden="true" v-text="labelInput"></div>
+      <div class="icon-holder" v-if="iconInput !== ''">
+        <general-button
+          :button-type="'icon-btn'"
+          :icon-class="iconInput"/>
+      </div>
     </div>
     <div class="line-basic"></div>
     <div class="line-ani"></div>
@@ -22,8 +27,10 @@
 </template>
 
 <script>
+import GeneralButton from "@/components/base/partials/GeneralButton";
+
 export default {
-  components: {},
+  components: { GeneralButton },
   props: {
     labelInput: {
       type: String,
@@ -111,15 +118,10 @@ export default {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0;
-    &:after {
-      content: "";
+    .icon-holder {
       position: absolute;
       right: 0;
       top: 0;
-    }
-    &.search:after {
-      font-family: $font-family-icons;
-      content: "\e804";
     }
     .text-input {
       position: relative;

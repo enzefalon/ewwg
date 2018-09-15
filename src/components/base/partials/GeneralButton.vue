@@ -24,7 +24,7 @@ export default {
     },
     elemClass: {
       type: String,
-      default: "bold-1_5-primary"
+      default: ""
     },
     iconClass: {
       type: String,
@@ -61,6 +61,13 @@ export default {
 .theme-3 .cta {
   @extend .bg-theme3-primary;
 }
-.icon-btn {
+.icon-btn:hover {
+  color: theme-color($theme-colors-1, "tertiary");
+}
+.theme-2 .icon-btn:hover {
+  color: theme-color($theme-colors-2, "tertiary");
+}
+.theme-3 .icon-btn:hover {
+  color: theme-color($theme-colors-3, "tertiary");
 }
 </style>

@@ -20,6 +20,7 @@
           class="bold-2_25-primary"/>
         <general-button
           :content-button="'Einloggen'"
+          :elem-class="'bold-1_5-primary'"
           :tab-index="3"
           :link-target="'/gallery'"
           class="login-cta" />

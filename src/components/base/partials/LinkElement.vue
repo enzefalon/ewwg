@@ -10,7 +10,7 @@ export default {
   props: {
     linkTarget: {
       type: String,
-      default: "/"
+      default: ""
     },
     elemclass: {
       type: String,

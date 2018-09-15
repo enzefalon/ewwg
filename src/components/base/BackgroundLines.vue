@@ -1,9 +1,3 @@
-<template>
-  <div class="bg-lines">
-    <div class="line" v-for="n in gridCols" :key="n"></div>
-  </div>
-</template>
-
 <script>
 import Config from "@/assets/js/Config";
 export default {
@@ -15,6 +9,19 @@ export default {
   },
   computed: {},
   methods: {},
+  render: function(createElement) {
+    return createElement(
+      "div",
+      {
+        class: "bg-lines"
+      },
+      Array.apply(null, { length: this.gridCols }).map(function() {
+        return createElement("div", {
+          class: "line"
+        });
+      })
+    );
+  },
   name: "BackgroundLines"
 };
 </script>
