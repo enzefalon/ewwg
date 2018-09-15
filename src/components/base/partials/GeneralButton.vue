@@ -1,7 +1,7 @@
 <template>
   <link-element :link-target="linkTarget" :class="getComponentClass">
     <span v-if="buttonType==='icon-btn'" :class="iconClass"></span>
-    <span v-text="content" v-else></span>
+    <span v-text="contentButton" v-else></span>
   </link-element>
 </template>
 <script>
@@ -14,7 +14,7 @@ export default {
       type: String,
       default: "cta"
     },
-    content: {
+    contentButton: {
       type: String,
       default: ""
     },

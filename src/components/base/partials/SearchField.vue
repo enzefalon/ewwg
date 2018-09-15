@@ -1,12 +1,13 @@
 <template>
   <form>
     <input-element
-      :labelInput="'Suchbegriff'"
-      :type="'text'"
-      :borders="false"
-      :nameInput="'searchfield'"
-      :idInput="'search'"
-      :requiredInput="true"
+      :label-input="'Suchbegriff'"
+      :type-input="'text'"
+      :borders-input="false"
+      :name-input="'searchfield'"
+      :id-input="'search'"
+      :required-input="true"
+      :icon-input="'search'"
       class="medium-1_5-primary"/>
   </form>
 </template>

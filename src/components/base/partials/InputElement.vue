@@ -1,6 +1,6 @@
 <template>
   <div :class="getBorderClass" class="input-complete" ref="inputContainer">
-    <div class="label-input">
+    <div class="label-input" :class="iconInput">
       <input
         ref="inputField"
         :disabled="disabledInput"
@@ -8,10 +8,9 @@
         @focus="onInputFocus"
         @blur="onInputBlur"
         class="text-input"
-        :type="type"
+        :type="typeInput"
         :id="idInput"
         :name="nameInput"
-        autocomplete="username"
         spellcheck="false"
         autocapitalize="none"
         :aria-label="labelInput"/>
@@ -30,7 +29,7 @@ export default {
       type: String,
       default: ""
     },
-    type: {
+    typeInput: {
       type: String,
       default: "text"
     },
@@ -54,9 +53,13 @@ export default {
       type: Boolean,
       default: false
     },
-    borders: {
+    bordersInput: {
       type: Boolean,
       default: true
+    },
+    iconInput: {
+      type: String,
+      default: ""
     }
   },
   data() {
@@ -64,7 +67,7 @@ export default {
   },
   computed: {
     getBorderClass() {
-      return this.borders ? "borders" : "";
+      return this.bordersInput ? "borders" : "";
     }
   },
   methods: {
@@ -108,7 +111,18 @@ export default {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0;
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &.search:after {
+      font-family: $font-family-icons;
+      content: "\e804";
+    }
     .text-input {
+      position: relative;
       width: 100%;
       color: inherit;
       font-weight: inherit;

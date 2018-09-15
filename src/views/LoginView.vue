@@ -3,24 +3,24 @@
     <div class="mainViewContainer">
       <form>
         <input-element
-          :labelInput="'E-Mail oder Username'"
-          :type="'text'"
-          :tabIndex="1"
-          :nameInput="'user'"
-          :idInput="'username'"
-          :requiredInput="true"
+          :label-input="'E-Mail oder Username'"
+          :type-input="'text'"
+          :tab-index="1"
+          :name-input="'user'"
+          :id-input="'username'"
+          :required-input="true"
           class="bold-2_25-primary"/>
         <input-element
-          :labelInput="'Passwort'"
-          :type="'password'"
-          :tabIndex="2"
-          :nameInput="'password'"
-          :idInput="'pass'"
-          :requiredInput="true"
+          :label-input="'Passwort'"
+          :type-input="'password'"
+          :tab-index="2"
+          :name-input="'password'"
+          :id-input="'pass'"
+          :required-input="true"
           class="bold-2_25-primary"/>
         <general-button
-          :content="'Einloggen'"
-          :tabIndex="3"
+          :content-button="'Einloggen'"
+          :tab-index="3"
           :link-target="'/gallery'"
           class="login-cta" />
       </form>

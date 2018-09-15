@@ -9,11 +9,11 @@
 <script>
 export default {
   props: {
-    width: {
-      type: [Number, String],
+    widthIcon: {
+      typeIcon: [Number, String],
       default: 100
     },
-    height: {
+    heightIcon: {
       type: [Number, String],
       default: 100
     },
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     getViewBox() {
-      return "0 0 " + this.width + " " + this.height;
+      return "0 0 " + this.widthIcon + " " + this.heightIcon;
     }
   },
   name: "IconBase"

@@ -2,11 +2,11 @@
 export default {
   components: {},
   props: {
-    content: {
+    contentHeadline: {
       type: String,
       default: ""
     },
-    type: {
+    typeHeadline: {
       type: String,
       default: "h1"
     },
@@ -22,11 +22,11 @@ export default {
   methods: {},
   render: function(createElement) {
     return createElement(
-      this.type,
+      this.typeHeadline,
       {
         class: this.elemclass
       },
-      this.content
+      this.contentHeadline
     );
   },
   name: "HeadLine"

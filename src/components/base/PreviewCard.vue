@@ -5,25 +5,25 @@
       :media-path="mediaPath"
       class="media-preview"/>
     <head-line
-      :content="'10.09.2018 - 23.00 Uhr'"
-      :type="'h4'"
+      :content-headline="'10.09.2018 - 23.00 Uhr'"
+      :type-headline="'h4'"
       class="light-0_75-grey preview-date" />
     <head-line
-      :content="'Lorem ipsum dolor'"
-      :type="'h3'"
+      :content-headline="'Lorem ipsum dolor'"
+      :type-headline="'h3'"
       class="bold-1_5-primary preview-head" />
     <p class="medium-1-light preview-desc">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
     <div class="preview-tags">
       <general-button
-      :content="'Abstract'"
-      :elemClass="'medium-0_75-primary'"
-      :tabIndex="1" />
+      :content-button="'Abstract'"
+      :elem-class="'medium-0_75-primary'"
+      :tab-index="1" />
       <general-button
-      :content="'Ambient'"
-      :elemClass="'medium-0_75-primary'"
-      :tabIndex="2" />
+      :content-button="'Ambient'"
+      :elem-class="'medium-0_75-primary'"
+      :tab-index="2" />
     </div>
   </div>
 </template>
