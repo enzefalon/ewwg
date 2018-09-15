@@ -1,25 +1,17 @@
 <template>
   <div class="bg-lines">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+    <div class="line" v-for="n in gridCols" :key="n"></div>
   </div>
 </template>
 
 <script>
+import Config from "@/assets/js/Config";
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      gridCols: Config.GRID_COLS
+    };
   },
   computed: {},
   methods: {},
@@ -47,7 +39,12 @@ export default {
         border-right: $border-base-width solid;
       }
     }
-    @include media-breakpoint-up($breakpoint-mobile) {
+    @include media-breakpoint-only($breakpoint-3col) {
+      &:nth-child(3n + 2) {
+        border-right: $border-base-width solid;
+      }
+    }
+    @include media-breakpoint-up($breakpoint-4col) {
       &:nth-child(even) {
         border-right: $border-base-width solid;
       }
@@ -61,18 +58,12 @@ export default {
   &:nth-child(6) {
     border-right: none;
   }
-  @include media-breakpoint-up($breakpoint-mobile) {
-    &:nth-child(4),
-    &:nth-child(6),
-    &:nth-child(8) {
-      border-right: none;
+  @include media-breakpoint-up($breakpoint-3col) {
+    border-right: none;
+    &:nth-child(2),
+    &:nth-child(10) {
+      border-right: $border-base-width solid;
     }
   }
-}
-.theme-2 .bg-lines .line {
-  //border-color: $body-color-2;
-}
-.theme-3 .bg-lines .line {
-  //border-color: $body-color-3;
 }
 </style>

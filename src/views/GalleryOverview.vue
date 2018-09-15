@@ -97,7 +97,10 @@ export default {
   @include vertical-spacing(false, true);
   @include make-col-ready();
   @include make-col(6);
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-only($breakpoint-3col) {
+    @include make-col(4);
+  }
+  @include media-breakpoint-up($breakpoint-4col) {
     @include make-col(3);
   }
 }
@@ -109,22 +112,25 @@ export default {
 }
 .preview-filter {
   order: 2;
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($breakpoint-3col) {
     order: 1;
   }
 }
 .preview-sort {
   order: 3;
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up($breakpoint-3col) {
     order: 2;
   }
 }
 .preview-search {
   order: 1;
   @include make-col-offset(6);
-  @include media-breakpoint-up(md) {
-    @include make-col-offset(3);
+  @include media-breakpoint-up($breakpoint-3col) {
+    @include make-col-offset(0);
     order: 3;
+  }
+  @include media-breakpoint-up($breakpoint-4col) {
+    @include make-col-offset(3);
   }
 }
 </style>

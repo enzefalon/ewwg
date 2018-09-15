@@ -32,10 +32,16 @@ export default {
   @include make-col-offset(2);
   @include make-col(6);
   text-align: right;
-  @include media-breakpoint-up($breakpoint-mobile) {
+  @include media-breakpoint-up($breakpoint-3col) {
+    text-align: left;
+  }
+  @include media-breakpoint-only($breakpoint-3col) {
+    @include make-col-offset(1);
+    @include make-col(3);
+  }
+  @include media-breakpoint-up($breakpoint-4col) {
     @include make-col-offset(1);
     @include make-col(2);
-    text-align: left;
   }
 }
 </style>

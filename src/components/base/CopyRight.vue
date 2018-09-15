@@ -24,7 +24,11 @@ export default {
   @include make-col-ready();
   @include make-col-offset(5);
   @include make-col(6);
-  @include media-breakpoint-up($breakpoint-mobile) {
+  @include media-breakpoint-only($breakpoint-3col) {
+    @include make-col-offset(8);
+    @include make-col(3);
+  }
+  @include media-breakpoint-up($breakpoint-4col) {
     @include make-col-offset(9);
     @include make-col(3);
   }
@@ -44,5 +48,11 @@ export default {
     inherit
   );
   text-align: right;
+}
+.login .copyright {
+  @include media-breakpoint-up($breakpoint-3col) {
+    @include make-col-offset(9);
+    @include make-col(3);
+  }
 }
 </style>

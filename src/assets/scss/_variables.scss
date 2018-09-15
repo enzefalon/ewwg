@@ -119,7 +119,7 @@ $grid-breakpoints: (
   xs: 0,
   sm: 545px,
   md: 769px,
-  lg: 1025px,
+  lg: 1280px,
   xl: 1440px,
   max: 1920px
 );
@@ -128,7 +128,8 @@ $grid-columns: 12;
 $grid-gutter-width: 2.0833vw;
 $border-base-width: 1px;
 
-$breakpoint-mobile: md;
+$breakpoint-3col: md;
+$breakpoint-4col: lg;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //  Fonts
