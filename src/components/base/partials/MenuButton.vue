@@ -1,6 +1,6 @@
 <template>
-  <div class="menu-button">
-    <link-element v-on:click.native="openMenu">
+  <div class="menu-button" ref="menuBtn">
+    <link-element v-on:click.native="toggleMenu">
       <span class="hamburger"></span>
       <span class="menu-text">Menü</span>
     </link-element>
@@ -17,8 +17,14 @@ export default {
   },
   computed: {},
   methods: {
-    openMenu() {
-      console.log("OPEN MENU ....");
+    toggleMenu() {
+      if (this.$refs && this.$refs.menuBtn && this.$refs.menuBtn.classList) {
+        if (!this.$refs.menuBtn.classList.contains("active")) {
+          this.$refs.menuBtn.classList.add("active");
+        } else {
+          this.$refs.menuBtn.classList.remove("active");
+        }
+      }
     }
   },
   name: "MenuButton"
@@ -41,6 +47,7 @@ export default {
     height: $menu-button-height;
     border-left: $border-base-width solid;
     border-right: $border-base-width solid;
+    @include transition();
     &:after,
     &:before {
       content: "";
@@ -48,6 +55,8 @@ export default {
       width: 1px;
       height: $menu-button-height;
       top: 0;
+      @include transition();
+      transform-origin: center center;
     }
     &:before {
       left: $menu-button-height / 4;
@@ -59,10 +68,26 @@ export default {
     }
   }
   .menu-text {
+    @extend .d-none;
+    @extend .d-md-inline;
     padding-left: $menu-button-height;
     vertical-align: top;
     font-size: $menu-button-height / 2;
     line-height: $menu-button-height;
+  }
+  &.active {
+    .hamburger {
+      border-left: $border-base-width solid transparent;
+      border-right: $border-base-width solid transparent;
+      &:before {
+        transform: rotate(-45deg)
+          translate(-($menu-button-height / 5), -($menu-button-height / 5));
+      }
+      &:after {
+        transform: rotate(45deg)
+          translate(($menu-button-height / 5), -($menu-button-height / 5));
+      }
+    }
   }
 }
 </style>
