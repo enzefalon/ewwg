@@ -1,11 +1,14 @@
 <script>
 import Config from "@/assets/js/Config";
 export default {
-  props: {},
+  props: {
+    gridCols: {
+      type: Number,
+      default: Config.GRID_COLS
+    }
+  },
   data() {
-    return {
-      gridCols: Config.GRID_COLS
-    };
+    return {};
   },
   computed: {},
   methods: {},

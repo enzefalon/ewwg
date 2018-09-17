@@ -1,11 +1,11 @@
-export default class AddRouterClasses {
+export default class DOMElemClassAdder {
   constructor(domElement) {
     this.domElement = domElement;
   }
 
   updateClassFromRoute(to, from) {
-    let routeTargetClass = AddRouterClasses.getClassForRoute(to);
-    let routeCurrentClass = AddRouterClasses.getClassForRoute(from);
+    let routeTargetClass = DOMElemClassAdder.getClassForRoute(to);
+    let routeCurrentClass = DOMElemClassAdder.getClassForRoute(from);
 
     if (routeCurrentClass && routeCurrentClass !== routeTargetClass) {
       this.removeClassFromElement(routeCurrentClass);
@@ -17,15 +17,19 @@ export default class AddRouterClasses {
   }
 
   removeClassFromElement(classStr) {
-    if (this.domElement.classList.contains(classStr)) {
+    if (this.hasClass(classStr)) {
       this.domElement.classList.remove(classStr);
     }
   }
 
   addClassToElement(classStr) {
-    if (!this.domElement.classList.contains(classStr)) {
+    if (!this.hasClass(classStr)) {
       this.domElement.classList.add(classStr);
     }
+  }
+
+  hasClass(classStr) {
+    return this.domElement.classList.contains(classStr);
   }
 
   static getClassForRoute(route) {

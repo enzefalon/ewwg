@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import store from "./store";
-import AddRouterClasses from "@/assets/js/AddRouterClasses";
+import DOMElemClassAdder from "@/assets/js/DOMElemClassAdder";
 import ExtendedRouteInformation from "@/assets/js/ExtendedRouteInformation";
 import LoginView from "@/views/LoginView";
 import GalleryOverview from "@/views/GalleryOverview";
@@ -16,7 +16,7 @@ Vue.use(Router);
 //    import(/* webpackChunkName: "view-[request]" */ `@/views/${view}.vue`);
 //};
 
-const addRouterClassInstance = new AddRouterClasses(document.documentElement);
+const addRouterClassInstance = new DOMElemClassAdder(document.documentElement);
 const extendedRouteInfo = new ExtendedRouteInformation(
   store,
   Config.HISTORY_MAX

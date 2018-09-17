@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-button" ref="menuBtn">
+  <div class="mainnav-toggle">
     <link-element v-on:click.native="toggleMenu">
       <span class="hamburger"></span>
       <span class="menu-text">Menü</span>
@@ -8,34 +8,35 @@
 </template>
 <script>
 import LinkElement from "@/components/base/partials/LinkElement";
+import DOMElemClassAdder from "@/assets/js/DOMElemClassAdder";
 
 export default {
   components: { LinkElement },
   props: {},
   data() {
-    return {};
+    return {
+      navClassBody: new DOMElemClassAdder(document.body)
+    };
   },
   computed: {},
   methods: {
     toggleMenu() {
-      if (this.$refs && this.$refs.menuBtn && this.$refs.menuBtn.classList) {
-        if (!this.$refs.menuBtn.classList.contains("active")) {
-          this.$refs.menuBtn.classList.add("active");
-        } else {
-          this.$refs.menuBtn.classList.remove("active");
-        }
+      if (!this.navClassBody.hasClass("mainnav-active")) {
+        this.navClassBody.addClassToElement("mainnav-active");
+      } else {
+        this.navClassBody.removeClassFromElement("mainnav-active");
       }
     }
   },
-  name: "MenuButton"
+  name: "MainNavigationToggle"
 };
 </script>
 
 <style lang="scss">
-.menu-button {
+.mainnav-toggle {
   position: absolute;
   top: 50vh;
-  left: ($grid-gutter-width / 2);
+  left: $grid-gutter-width;
   transform: translateY(-50%);
   height: $menu-button-height;
   @include transition();
@@ -75,18 +76,18 @@ export default {
     font-size: $menu-button-height / 2;
     line-height: $menu-button-height;
   }
-  &.active {
-    .hamburger {
-      border-left: $border-base-width solid transparent;
-      border-right: $border-base-width solid transparent;
-      &:before {
-        transform: rotate(-45deg)
-          translate(-($menu-button-height / 5), -($menu-button-height / 5));
-      }
-      &:after {
-        transform: rotate(45deg)
-          translate(($menu-button-height / 5), -($menu-button-height / 5));
-      }
+}
+.mainnav-active .mainnav-toggle {
+  .hamburger {
+    border-left: $border-base-width solid transparent;
+    border-right: $border-base-width solid transparent;
+    &:before {
+      transform: rotate(-45deg)
+        translate(-($menu-button-height / 5), -($menu-button-height / 5));
+    }
+    &:after {
+      transform: rotate(45deg)
+        translate(($menu-button-height / 5), -($menu-button-height / 5));
     }
   }
 }

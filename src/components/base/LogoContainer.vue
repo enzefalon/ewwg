@@ -1,6 +1,6 @@
 <template>
   <div class="logo-container">
-    <link-element :link-target="'/'">
+    <link-element :link-target="'/'" :hover-active="false">
       <span class="icon icon-logo"></span>
     </link-element>
   </div>

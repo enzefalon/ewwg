@@ -1,5 +1,5 @@
 <template>
-  <link-element :link-target="linkTarget" :class="getComponentClass">
+  <link-element :link-target="linkTarget" :class="getComponentClass" :hover-active="getHoverState">
     <span v-if="buttonType==='icon-btn'" :class="iconClass"></span>
     <span v-text="contentButton" v-else></span>
   </link-element>
@@ -41,6 +41,9 @@ export default {
   computed: {
     getComponentClass() {
       return this.buttonType + " " + this.elemClass;
+    },
+    getHoverState() {
+      return this.buttonType === "icon-btn" ? true : false;
     }
   },
   methods: {},
