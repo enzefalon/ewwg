@@ -2,7 +2,7 @@
   <div class="mainnav-toggle">
     <link-element v-on:click.native="toggleMenu">
       <span class="hamburger"></span>
-      <span class="menu-text">Menü</span>
+      <span class="menu-text" v-text="getToggleText">Menü</span>
     </link-element>
   </div>
 </template>
@@ -18,7 +18,13 @@ export default {
       navClassBody: new DOMElemClassAdder(document.body)
     };
   },
-  computed: {},
+  computed: {
+    getToggleText() {
+      return !this.navClassBody.hasClass("mainnav-active")
+        ? "Menü"
+        : "Schließen";
+    }
+  },
   methods: {
     toggleMenu() {
       if (!this.navClassBody.hasClass("mainnav-active")) {
@@ -35,6 +41,7 @@ export default {
 <style lang="scss">
 .mainnav-toggle {
   position: absolute;
+  pointer-events: all;
   top: 50vh;
   left: $grid-gutter-width;
   transform: translateY(-50%);

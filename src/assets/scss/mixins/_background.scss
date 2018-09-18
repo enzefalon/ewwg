@@ -1,14 +1,5 @@
 @mixin bg-variant($parent, $color) {
   #{$parent} {
-    border: $border-base-width solid $color;
-    background-color: transparent !important;
-  }
-  a#{$parent},
-  button#{$parent} {
-    &:hover,
-    &:focus {
-      color: $body-bg;
-      background-color: $color !important;
-    }
+    background-color: $color !important;
   }
 }

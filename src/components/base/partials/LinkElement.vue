@@ -59,4 +59,15 @@ export default {
     }
   }
 }
+.mainnav-active {
+  .hover-active,
+  .theme-2 .hover-active,
+  .theme-3 .hover-active {
+    color: $body-bg;
+    &:hover,
+    &focus {
+      color: theme-color($theme-colors-1, "dark");
+    }
+  }
+}
 </style>

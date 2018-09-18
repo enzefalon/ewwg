@@ -155,7 +155,7 @@ export default {
     }
   }
   .line-basic {
-    @extend .bg-theme1-secondary;
+    @extend .button-theme1-secondary;
     position: absolute;
     bottom: -2px;
     height: $border-base-width;
@@ -175,7 +175,7 @@ export default {
     }
   }
   .line-ani {
-    @extend .bg-theme1-primary;
+    @extend .button-theme1-primary;
     transform: scaleX(0);
     bottom: -2px;
     height: 1px;
@@ -207,10 +207,10 @@ export default {
       color: inherit;
     }
     .line-basic {
-      @extend .bg-theme2-secondary;
+      @extend .button-theme2-secondary;
     }
     .line-ani {
-      @extend .bg-theme2-primary;
+      @extend .button-theme2-primary;
     }
   }
 }
@@ -223,10 +223,10 @@ export default {
       color: inherit;
     }
     .line-basic {
-      @extend .bg-theme3-secondary;
+      @extend .button-theme3-secondary;
     }
     .line-ani {
-      @extend .bg-theme3-primary;
+      @extend .button-theme3-primary;
     }
   }
 }

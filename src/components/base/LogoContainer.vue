@@ -32,6 +32,7 @@ export default {
   }
   .icon-logo {
     @extend .bold-8-primary;
+    @include transition();
     font-weight: $font-weight-normal;
     line-height: 1px;
     padding: 0;

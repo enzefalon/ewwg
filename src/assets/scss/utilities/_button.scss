@@ -1,0 +1,9 @@
+@each $color, $value in $theme-colors-1 {
+  @include button-variant(".button-theme1-#{$color}", $value);
+}
+@each $color, $value in $theme-colors-2 {
+  @include button-variant(".button-theme2-#{$color}", $value);
+}
+@each $color, $value in $theme-colors-3 {
+  @include button-variant(".button-theme3-#{$color}", $value);
+}

@@ -54,15 +54,15 @@ export default {
 <style lang="scss">
 .cta {
   @extend .d-inline-block;
-  @extend .bg-theme1-primary;
+  @extend .button-theme1-primary;
   padding: 0.25em 0.85em;
   border-radius: 0.85em;
 }
 .theme-2 .cta {
-  @extend .bg-theme2-primary;
+  @extend .button-theme2-primary;
 }
 .theme-3 .cta {
-  @extend .bg-theme3-primary;
+  @extend .button-theme3-primary;
 }
 .icon-btn:hover {
   color: theme-color($theme-colors-1, "tertiary");
