@@ -33,6 +33,10 @@ export default {
     tabIndex: {
       type: Number,
       default: 0
+    },
+    hoverActive: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -43,7 +47,9 @@ export default {
       return this.buttonType + " " + this.elemClass;
     },
     getHoverState() {
-      return this.buttonType === "icon-btn" ? true : false;
+      return !this.hoverActive
+        ? this.hoverActive
+        : this.buttonType === "icon-btn";
     }
   },
   methods: {},
@@ -63,14 +69,5 @@ export default {
 }
 .theme-3 .cta {
   @extend .button-theme3-primary;
-}
-.icon-btn:hover {
-  color: theme-color($theme-colors-1, "tertiary");
-}
-.theme-2 .icon-btn:hover {
-  color: theme-color($theme-colors-2, "tertiary");
-}
-.theme-3 .icon-btn:hover {
-  color: theme-color($theme-colors-3, "tertiary");
 }
 </style>

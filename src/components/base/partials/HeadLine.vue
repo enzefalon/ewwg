@@ -24,7 +24,7 @@ export default {
     return createElement(
       this.typeHeadline,
       {
-        class: this.elemclass
+        class: this.elemclass ? this.elemClass : this.typeHeadline
       },
       this.contentHeadline
     );
@@ -34,4 +34,7 @@ export default {
 </script>
 
 <style lang="scss">
+  .h1, .h2, .h3, .h4 {
+    font-size: inherit;
+  }
 </style>

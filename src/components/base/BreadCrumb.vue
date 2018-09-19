@@ -1,10 +1,10 @@
 <template>
   <div class="bread-crumb">
-    <link-element>
+    <link-element :elem-class="'bold-3-primary'">
       <head-line
         :content-headline="getBreadcrump"
         :type-headline="'h1'"
-        class="bold-3-primary" />
+      />
     </link-element>
   </div>
 </template>

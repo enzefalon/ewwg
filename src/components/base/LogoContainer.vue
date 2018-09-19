@@ -1,16 +1,18 @@
 <template>
   <div class="logo-container">
-    <link-element :link-target="'/'" :hover-active="false">
-      <span class="icon icon-logo"></span>
-    </link-element>
+    <general-button
+      :link-target="'/'"
+      :hover-active="false"
+      :button-type="'icon-btn'"
+      :icon-class="'icon-logo'"/>
   </div>
 </template>
 
 <script>
-import LinkElement from "@/components/base/partials/LinkElement";
+import GeneralButton from "@/components/base/partials/GeneralButton";
 
 export default {
-  components: { LinkElement },
+  components: { GeneralButton },
   props: {},
   data() {
     return {};

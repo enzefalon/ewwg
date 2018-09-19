@@ -52,10 +52,6 @@ $map-0_75: (
   @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, inherit, $letter-spacing-base);
 }
 
-.mainnav-active .bold-8-primary {
-  @include font-style ($font-family-base, $map-8, $line-height-base, $font-weight-bold, $body-bg, $letter-spacing-base);
-}
-
 //
 //  bold 3rem@1920px
 //
@@ -89,19 +85,6 @@ $map-0_75: (
   }
   .bold-3-tertiary {
     @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-3, "tertiary"), $letter-spacing-base);
-  }
-}
-.mainnav-active {
-  .bold-3-primary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, $body-bg, $letter-spacing-base);
-  }
-  .bold-3-secondary,
-  .bold-3-tertiary,
-  .theme-2 .bold-3-secondary,
-  .theme-2 .bold-3-tertiary,
-  .theme-3 .bold-3-secondary,
-  .theme-3 .bold-3-tertiary {
-    @include font-style ($font-family-base, $map-3, $line-height-base, $font-weight-bold, theme-color($theme-colors-1, "dark"), $letter-spacing-base);
   }
 }
 
@@ -295,6 +278,24 @@ $map-0_75: (
     @include font-style ($font-family-base, $map-0_75, $line-height-base, $font-weight-light, theme-color($theme-colors-3, "tertiary"));
   }
 }
+
+//
+//  Active Nav Color Change
+//
+.mainnav-active {
+  .site-header,
+  .site-navigation {
+    .bold-3-primary,
+    .bold-8-primary {
+      color: $body-bg;
+    }
+    .bold-3-secondary,
+    .bold-3-tertiary {
+      color: theme-color($theme-colors-1, "dark");
+    }
+  }
+}
+
 
 //
 //  Button Basics
