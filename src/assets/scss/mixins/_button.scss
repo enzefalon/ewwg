@@ -6,6 +6,7 @@
   a#{$parent},
   button#{$parent} {
     &:hover,
+    &:active,
     &:focus {
       color: $body-bg;
       background-color: $color !important;

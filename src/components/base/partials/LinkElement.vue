@@ -39,14 +39,14 @@ export default {
 <style lang="scss">
 .hover-active {
   &:hover,
-  &:focus {
+  &:active {
     color: theme-color($theme-colors-1, "tertiary");
   }
 }
 .theme-2 {
   .hover-active {
     &:hover,
-    &:focus {
+    &:active {
       color: theme-color($theme-colors-2, "tertiary");
     }
   }
@@ -54,7 +54,7 @@ export default {
 .theme-3 {
   .hover-active {
     &:hover,
-    &:focus {
+    &:active {
       color: theme-color($theme-colors-3, "tertiary");
     }
   }
@@ -65,7 +65,7 @@ export default {
     .hover-active {
       color: $body-bg;
       &:hover,
-      &:focus {
+      &:active {
         color: theme-color($theme-colors-1, "dark");
       }
     }

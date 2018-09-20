@@ -6,8 +6,9 @@
 </template>
 
 <script>
-import MainNavigationBackground from "@/components/base/partials/MainNavigationBackground";
-import MainNavigationToggle from "@/components/base/partials/MainNavigationToggle";
+import MainNavigationBackground from "@/components/base/MainNavigationBackground";
+import MainNavigationToggle from "@/components/base/MainNavigationToggle";
+
 export default {
   components: { MainNavigationBackground, MainNavigationToggle },
   props: {},

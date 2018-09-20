@@ -1,5 +1,6 @@
 @mixin bg-variant($parent, $color) {
   #{$parent} {
     background-color: $color !important;
+    border-right: 1px solid $body-bg;
   }
 }

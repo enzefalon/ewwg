@@ -44,10 +44,9 @@ html, body, #app {
     position: fixed;
     pointer-events: none;
     top: 0;
-    left: ($grid-gutter-width / 2);
+    left: $grid-gutter-width / 2;
     height: 100vh;
     width: 100vw;
-    @include make-row();
   }
 }
 

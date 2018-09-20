@@ -34,7 +34,10 @@ export default {
 </script>
 
 <style lang="scss">
-  .h1, .h2, .h3, .h4 {
-    font-size: inherit;
-  }
+.h1,
+.h2,
+.h3,
+.h4 {
+  @include font-style(inherit, inherit, inherit, inherit, inherit);
+}
 </style>

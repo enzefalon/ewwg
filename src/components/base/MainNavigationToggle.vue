@@ -2,7 +2,8 @@
   <div class="mainnav-toggle">
     <link-element v-on:click.native="toggleMenu">
       <span class="hamburger"></span>
-      <span class="menu-text" v-text="getToggleText">Menü</span>
+      <span class="toggle-text-open">Menü</span>
+      <span class="toggle-text-close">Schließen</span>
     </link-element>
   </div>
 </template>
@@ -18,13 +19,7 @@ export default {
       navClassBody: new DOMElemClassAdder(document.body)
     };
   },
-  computed: {
-    getToggleText() {
-      return !this.navClassBody.hasClass("mainnav-active")
-        ? "Menü"
-        : "Schließen";
-    }
-  },
+  computed: {},
   methods: {
     toggleMenu() {
       if (!this.navClassBody.hasClass("mainnav-active")) {
@@ -43,7 +38,7 @@ export default {
   position: absolute;
   pointer-events: all;
   top: 50vh;
-  left: $grid-gutter-width;
+  left: $grid-gutter-width / 2;
   transform: translateY(-50%);
   height: $menu-button-height;
   @include transition();
@@ -58,12 +53,12 @@ export default {
     @include transition();
     &:after,
     &:before {
+      @include transition();
       content: "";
       position: absolute;
       width: 1px;
       height: $menu-button-height;
       top: 0;
-      @include transition();
       transform-origin: center center;
     }
     &:before {
@@ -75,13 +70,16 @@ export default {
       border-right: ($border-base-width * 2) solid;
     }
   }
-  .menu-text {
+  .toggle-text-close,
+  .toggle-text-open {
     @extend .d-none;
-    @extend .d-md-inline;
     padding-left: $menu-button-height;
     vertical-align: top;
     font-size: $menu-button-height / 2;
     line-height: $menu-button-height;
+  }
+  .toggle-text-open {
+    @extend .d-md-inline;
   }
 }
 .mainnav-active .mainnav-toggle {
@@ -96,6 +94,12 @@ export default {
       transform: rotate(45deg)
         translate(($menu-button-height / 5), -($menu-button-height / 5));
     }
+  }
+  .toggle-text-open {
+    @extend .d-none;
+  }
+  .toggle-text-close {
+    @extend .d-md-inline;
   }
 }
 </style>

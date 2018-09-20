@@ -1,4 +1,4 @@
-@mixin font-style (
+@mixin font-style(
   $family: $font-family-base,
   $sizes: $map-fontsizes-base,
   $line-height: $line-height-base,
@@ -8,18 +8,26 @@
   font-family: $family;
   font-weight: $weight;
   color: $color;
-  @include poly-fluid-sizing('font-size', $sizes);
+  @if (is-map($sizes)) {
+    @include poly-fluid-sizing('font-size', $sizes);
+  } @else {
+    font-size: inherit;
+  }
   @include transition();
   @if $spacing {
     letter-spacing: $spacing;
   }
 }
 
+@function is-map($var) {
+  @return type-of($var) == 'map';
+}
+
 @function list-remove($list, $index) {
   $newList: ();
   @for $i from 1 through length($list) {
     @if $i != $index {
-      $newList: append($newList, nth($list,$i), 'space');
+      $newList: append($newList, nth($list, $i), 'space');
     }
   }
   @return $newList;
@@ -28,7 +36,7 @@
 @function list-sort($list) {
   $sortedlist: ();
   @while length($list) > 0 {
-    $value: nth($list,1);
+    $value: nth($list, 1);
     @each $item in $list {
       @if $item < $value {
         $value: $item;
@@ -72,20 +80,20 @@
   }
   $map: map-sort($map);
   $keys: map-keys($map);
-  #{$property}: map-get($map, nth($keys,1));
+  #{$property}: map-get($map, nth($keys, 1));
   @for $i from 1 through ($length - 1) {
-    @media (min-width:nth($keys,$i)) {
-      $value1: map-get($map, nth($keys,$i));
-      $value2: map-get($map, nth($keys,($i + 1)));
+    @media (min-width: nth($keys, $i)) {
+      $value1: map-get($map, nth($keys, $i));
+      $value2: map-get($map, nth($keys, ($i + 1)));
       @if ($value1 != $value2) {
-        #{$property}: linear-interpolation((nth($keys,$i): $value1, nth($keys,($i+1)): $value2));
+        #{$property}: linear-interpolation((nth($keys, $i): $value1, nth($keys, ($i+1)): $value2));
       } @else {
         #{$property}: $value1;
       }
     }
   }
-  @media (min-width:nth($keys,$length)) {
-    #{$property}: map-get($map, nth($keys,$length));
+  @media (min-width: nth($keys, $length)) {
+    #{$property}: map-get($map, nth($keys, $length));
   }
 }
 

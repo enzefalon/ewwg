@@ -1,6 +1,6 @@
 <template>
   <div class="bread-crumb">
-    <link-element :elem-class="'bold-3-primary'">
+    <link-element>
       <head-line
         :content-headline="getBreadcrump"
         :type-headline="'h1'"
@@ -34,6 +34,7 @@ export default {
   @include make-col-ready();
   @include make-col-offset(2);
   @include make-col(6);
+  @extend .bold-3-primary;
   text-align: right;
   @include media-breakpoint-up($breakpoint-3col) {
     text-align: left;
