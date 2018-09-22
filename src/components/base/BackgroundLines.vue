@@ -5,6 +5,10 @@ export default {
     gridCols: {
       type: Number,
       default: Config.GRID_COLS
+    },
+    isInverted: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -18,9 +22,9 @@ export default {
       {
         class: "bg-lines"
       },
-      Array.apply(null, { length: this.gridCols }).map(function() {
+      Array.apply(null, { length: this.gridCols }).map(() => {
         return createElement("div", {
-          class: "line"
+          class: "line" + (this.isInverted ? " inverted" : "")
         });
       })
     );
@@ -60,6 +64,20 @@ export default {
       }
       &:last-child {
         border-right: none;
+      }
+    }
+    &.inverted {
+      border-color: $body-bg;
+      background: $body-color-1;
+      @include media-breakpoint-up(xs) {
+        &:last-child {
+          display: none;
+        }
+      }
+      @include media-breakpoint-up($breakpoint-4col) {
+        &:nth-child(11) {
+          display: none;
+        }
       }
     }
   }

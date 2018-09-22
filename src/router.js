@@ -3,6 +3,7 @@ import Router from "vue-router";
 import store from "./store";
 import DOMElemClassAdder from "@/assets/js/DOMElemClassAdder";
 import ExtendedRouteInformation from "@/assets/js/ExtendedRouteInformation";
+import RouteMetaChange from "@/assets/js/RouteMetaChange";
 import LoginView from "@/views/LoginView";
 import GalleryOverview from "@/views/GalleryOverview";
 import Config from "@/assets/js/Config";
@@ -40,7 +41,14 @@ const router = new Router({
       component: LoginView,
       meta: {
         bodyClass: "login",
-        navPointName: "Login"
+        navPointName: "Login",
+        title: "Login" + Config.TITLE_SUFFIX,
+        metaTags: [
+          {
+            name: "description",
+            content: "Logge Dich ein, um fortzufahren."
+          }
+        ]
       }
     },
     {
@@ -49,7 +57,15 @@ const router = new Router({
       component: GalleryOverview,
       meta: {
         bodyClass: "gallery-overview",
-        navPointName: "Gallerie"
+        navPointName: "Gallerie",
+        title: "Gallerie Übersicht" + Config.TITLE_SUFFIX,
+        metaTags: [
+          {
+            name: "description",
+            content:
+              "Hier findest du alle Medien im Überblick. Nutze die Filter, um die Auswahl einzuschränken."
+          }
+        ]
       }
     },
     {
@@ -63,6 +79,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   addRouterClassInstance.updateClassFromRoute(to, from);
   extendedRouteInfo.addToRouteHistory(to);
+  RouteMetaChange.changeMeta(to);
   next();
 });
 

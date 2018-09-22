@@ -1,16 +1,16 @@
 <template>
   <div class="site-navigation">
-    <main-navigation-background></main-navigation-background>
+    <background-lines class="nav-bg" :is-inverted="true"></background-lines>
     <main-navigation-toggle></main-navigation-toggle>
   </div>
 </template>
 
 <script>
-import MainNavigationBackground from "@/components/base/MainNavigationBackground";
+import BackgroundLines from "@/components/base/BackgroundLines";
 import MainNavigationToggle from "@/components/base/MainNavigationToggle";
 
 export default {
-  components: { MainNavigationBackground, MainNavigationToggle },
+  components: { BackgroundLines, MainNavigationToggle },
   props: {},
   data() {
     return {};
@@ -22,4 +22,14 @@ export default {
 </script>
 
 <style lang="scss">
+.nav-bg {
+  @extend .d-none;
+  opacity: 0;
+  @include transition(opacity 1s ease-in);
+}
+
+.mainnav-active .nav-bg {
+  @extend .d-flex;
+  opacity: 1;
+}
 </style>

@@ -1,56 +1,54 @@
 <template>
-  <div class="mainView">
-    <div class="mainViewContainer">
-      <div class="galleryFilter">
-        <div class="preview-filter">
-          <p>
-            <span>Filtern:</span>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-picture'"/>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-video'"/>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-playlist'"/>
-          </p>
-        </div>
-        <div class="preview-sort">
-          <p>
-            <span>Sortieren:</span>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-sort-name-up'"/>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-sort-name-down'"/>
-            <general-button
-              :button-type="'icon-btn'"
-              :icon-class="'icon-calendar'"/>
-          </p>
-        </div>
-        <div class="preview-search">
-          <search-field />
-        </div>
+  <div class="mainViewContainer">
+    <div class="galleryFilter">
+      <div class="preview-filter">
+        <p>
+          <span>Filtern:</span>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-picture'"/>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-video'"/>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-playlist'"/>
+        </p>
       </div>
-      <div class="galleryPreview">
-        <div class="preview-card">
-          <preview-card
-            :media-path="getTemporaryPath"/>
-        </div>
-        <div class="preview-card">
-          <preview-card
-            :media-path="getTemporaryPath"/>
-        </div>
-        <div class="preview-card">
-          <preview-card
-            :media-path="getTemporaryPath"/>
-        </div>
-        <div class="preview-card">
-          <preview-card
-            :media-path="getTemporaryPath"/>
-        </div>
+      <div class="preview-sort">
+        <p>
+          <span>Sortieren:</span>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-sort-name-up'"/>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-sort-name-down'"/>
+          <general-button
+            :button-type="'icon-btn'"
+            :icon-class="'icon-calendar'"/>
+        </p>
+      </div>
+      <div class="preview-search">
+        <search-field />
+      </div>
+    </div>
+    <div class="galleryPreview">
+      <div class="preview-card">
+        <preview-card
+          :media-path="getTemporaryPath"/>
+      </div>
+      <div class="preview-card">
+        <preview-card
+          :media-path="getTemporaryPath"/>
+      </div>
+      <div class="preview-card">
+        <preview-card
+          :media-path="getTemporaryPath"/>
+      </div>
+      <div class="preview-card">
+        <preview-card
+          :media-path="getTemporaryPath"/>
       </div>
     </div>
   </div>

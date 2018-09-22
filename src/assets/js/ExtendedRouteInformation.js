@@ -1,4 +1,4 @@
-//TODO: switch between store and internal array (depending on availability of store)
+import MUTATIONS from "@/assets/js/mutation-types";
 
 export default class ExtendedRouteInformation {
   constructor(storeInstance, maxEntries = 10) {
@@ -7,16 +7,29 @@ export default class ExtendedRouteInformation {
     this.routesInfo = [];
   }
 
+  get useStore() {
+    return Boolean(this.store);
+  }
+
   get routeInfoLength() {
-    return this.routesInfo.length;
+    return this.useStore
+      ? this.store.getters.historyLength
+      : this.routesInfo.length;
   }
 
   addToRouteHistory(to) {
-    if (this.routeInfoLength < this.maxEntries) {
-      this.routesInfo.push(to);
+    if (this.useStore) {
+      this.store.commit(MUTATIONS.ADD_TO_HISTORY, {
+        entry: to,
+        maxEntries: this.maxEntries
+      });
     } else {
-      this.routesInfo.shift();
-      this.routesInfo.push(to);
+      if (this.routeInfoLength < this.maxEntries) {
+        this.routesInfo.push(to);
+      } else {
+        this.routesInfo.shift();
+        this.routesInfo.push(to);
+      }
     }
   }
 }
