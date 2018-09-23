@@ -61,7 +61,6 @@ export default {
   @extend .bold-8-primary;
   @extend .d-none;
   opacity: 0;
-  margin-left: -$grid-gutter-width;
   justify-content: center;
   flex-direction: column;
   flex-wrap: nowrap;

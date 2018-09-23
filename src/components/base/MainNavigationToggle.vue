@@ -38,7 +38,7 @@ export default {
   position: absolute;
   pointer-events: all;
   top: 50vh;
-  left: 0;
+  left: ($grid-gutter-width / 2);
   transform: translateY(-50%);
   min-width: $menu-button-height;
   height: $menu-button-height;
