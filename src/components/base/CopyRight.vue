@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import Config from "@/assets/js/Config";
 export default {
   components: {},
   props: {},
@@ -11,7 +12,7 @@ export default {
   },
   computed: {
     getCopyRight() {
-      return "© " + new Date().getFullYear() + " E. Winkler";
+      return "© " + new Date().getFullYear() + " " + Config.NAME_TO_SHOW;
     }
   },
   methods: {},

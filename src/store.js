@@ -18,12 +18,14 @@ export default new Vuex.Store({
       return getters.historyLength
         ? state.historyInfo[getters.historyLength - 1]
         : null;
+    },
+    completeHistory: state => {
+      return state.historyInfo;
     }
   },
   mutations: {
     [MUTATIONS.ACTIVE_BREAKPOINT](state, n) {
       state.activeBreakpoint = n;
-      console.log("ACTIVE BREAKPOINT: ", Date.now());
     },
     [MUTATIONS.ADD_TO_HISTORY](state, payload) {
       if (state.historyInfo.length < payload.maxEntries) {

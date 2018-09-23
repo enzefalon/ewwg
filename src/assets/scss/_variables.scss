@@ -19,6 +19,7 @@ $white: hsl(0, 0, 100); //#FFFFFF
 $yellow: hsb(46, 69, 100); //#FFD550
 $yellow-500: hsb(45, 50, 100); //#FEDE80
 $yellow-100: hsb(43, 30, 100); //#FFE9B3
+$yellow-alpha-0: hsb(46, 69, 100, 0);
 
 //
 //  Blue
@@ -26,13 +27,7 @@ $yellow-100: hsb(43, 30, 100); //#FFE9B3
 $blue: hsb(208, 65, 80); //#488FCC
 $blue-500: hsb(203, 60, 87); //#59ABDF
 $blue-100: hsb(203, 46, 92); //#7EC1EA
-
-//
-//  Green
-//
-$green: hsb(171, 52, 76); //#5EC3B4
-$green-500: hsb(171, 37, 81); //#81CEC3
-$green-100: hsb(171, 24, 85); //#A5D9D1
+$blue-alpha-0: hsb(208, 65, 80, 0);
 
 //
 //  Red
@@ -40,6 +35,14 @@ $green-100: hsb(171, 24, 85); //#A5D9D1
 $red: hsb(14, 82, 95); //#F15A2B
 $red-500: hsb(13, 67, 95); //#F37450
 $red-100: hsb(13, 48, 97); //#F79A81
+$red-alpha-0: hsb(14, 82, 95, 0);
+
+//
+//  Green
+//
+$green: hsb(171, 52, 76); //#5EC3B4
+$green-500: hsb(171, 37, 81); //#81CEC3
+$green-100: hsb(171, 24, 85); //#A5D9D1
 
 //
 //  Orange
@@ -56,12 +59,15 @@ $orange-100: hsb(27, 49, 98); //#FBB880
 //  Theme Color Definitions
 //
 $primary-1: $yellow;
+$primary-1-alpha-0: $yellow-alpha-0;
 $secondary-1: $yellow-500;
 $tertiary-1: $yellow-100;
 $primary-2: $blue;
+$primary-2-alpha-0: $blue-alpha-0;
 $secondary-2: $blue-500;
 $tertiary-2: $blue-100;
 $primary-3: $red;
+$primary-3-alpha-0: $red-alpha-0;
 $secondary-3: $red-500;
 $tertiary-3: $red-100;
 $success: $green;
@@ -81,25 +87,28 @@ $theme-colors: (
 );
 $theme-colors-1: map-merge(
   (
-    "primary": $yellow,
-    "secondary": $yellow-500,
-    "tertiary": $yellow-100
+    "primary": $primary-1,
+    "secondary": $secondary-1,
+    "tertiary": $tertiary-1,
+    "primary-alpha-0": $primary-1-alpha-0
   ), $theme-colors
 );
 
 $theme-colors-2: map-merge(
     (
-      "primary": $blue,
-      "secondary": $blue-500,
-      "tertiary": $blue-100
+      "primary": $primary-2,
+      "secondary": $secondary-2,
+      "tertiary": $tertiary-2,
+      "primary-alpha-0": $primary-2-alpha-0
     ), $theme-colors
 );
 
 $theme-colors-3: map-merge(
     (
-      "primary": $red,
-      "secondary": $red-500,
-      "tertiary": $red-100
+      "primary": $primary-3,
+      "secondary": $secondary-3,
+      "tertiary": $tertiary-3,
+      "primary-alpha-0": $primary-3-alpha-0
     ), $theme-colors
 );
 
@@ -109,6 +118,9 @@ $theme-colors-3: map-merge(
 $body-color-1: theme-color($theme-colors-1, "primary");
 $body-color-2: theme-color($theme-colors-2, "primary");
 $body-color-3: theme-color($theme-colors-3, "primary");
+$body-color-1-alpha-0: theme-color($theme-colors-1, "primary-alpha-0");
+$body-color-2-alpha-0: theme-color($theme-colors-2, "primary-alpha-0");
+$body-color-3-alpha-0: theme-color($theme-colors-3, "primary-alpha-0");
 $body-bg: $black;
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -165,7 +177,7 @@ $line-height-base: 1.2;
 //  Transition
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
-$transition-base-time: .24s;
+$transition-base-time: .48s;
 $transition-base-animation: ease-in-out;
 $transition-base: all $transition-base-time $transition-base-animation;
 

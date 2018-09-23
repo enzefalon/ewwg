@@ -1,6 +1,6 @@
 <template>
-  <div class="mainnav-toggle">
-    <link-element v-on:click.native="toggleMenu">
+  <div class="mainnav-toggle" v-on:click.prevent.stop="toggleMenu">
+    <link-element>
       <span class="hamburger"></span>
       <span class="toggle-text-open">Menü</span>
       <span class="toggle-text-close">Schließen</span>
@@ -38,10 +38,12 @@ export default {
   position: absolute;
   pointer-events: all;
   top: 50vh;
-  left: $grid-gutter-width / 2;
+  left: 0;
   transform: translateY(-50%);
+  min-width: $menu-button-height;
   height: $menu-button-height;
   @include transition();
+  transition-property: top, transform, left, color;
   .hamburger {
     position: relative;
     display: inline-block;
@@ -51,9 +53,11 @@ export default {
     border-left: $border-base-width solid;
     border-right: $border-base-width solid;
     @include transition();
+    transition-property: border;
     &:after,
     &:before {
       @include transition();
+      transition-property: transform;
       content: "";
       position: absolute;
       width: 1px;

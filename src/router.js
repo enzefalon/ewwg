@@ -19,8 +19,8 @@ Vue.use(Router);
 
 const addRouterClassInstance = new DOMElemClassAdder(document.documentElement);
 const extendedRouteInfo = new ExtendedRouteInformation(
-  store,
-  Config.HISTORY_MAX
+  Config.HISTORY_MAX,
+  store
 );
 
 const router = new Router({
@@ -32,7 +32,8 @@ const router = new Router({
       name: "root",
       redirect: "/login",
       meta: {
-        bodyClass: ""
+        bodyClass: "",
+        isMainNav: false
       }
     },
     {
@@ -42,7 +43,8 @@ const router = new Router({
       meta: {
         bodyClass: "login",
         navPointName: "Login",
-        title: "Login" + Config.TITLE_SUFFIX,
+        isMainNav: false,
+        title: "Login" + Config.TITLE_SUFFIX + Config.NAME_TO_SHOW,
         metaTags: [
           {
             name: "description",
@@ -58,7 +60,8 @@ const router = new Router({
       meta: {
         bodyClass: "gallery-overview",
         navPointName: "Gallerie",
-        title: "Gallerie Übersicht" + Config.TITLE_SUFFIX,
+        isMainNav: true,
+        title: "Gallerie Übersicht" + Config.TITLE_SUFFIX + Config.NAME_TO_SHOW,
         metaTags: [
           {
             name: "description",

@@ -1,7 +1,5 @@
 import MUTATIONS from "@/assets/js/mutation-types";
 
-//TODO: try to hunt down bug with for loop
-
 export default class WindowResizeListener {
   constructor(storeInstance, delay = 240, breakPoints = []) {
     this.store = storeInstance;
@@ -13,12 +11,12 @@ export default class WindowResizeListener {
   }
 
   initWindowResizeHandler() {
+    this.setStart();
+    this.getDimensions();
     window.addEventListener("resize", () => {
       this.stopTimer();
       this.rAFID = window.requestAnimationFrame(() => this.step());
     });
-    this.setStart();
-    this.getDimensions();
   }
 
   step() {
@@ -31,35 +29,20 @@ export default class WindowResizeListener {
   }
 
   getDimensions() {
-    /*const windowWidth = window.innerWidth;
-    let i = this.breakPointArray.length - 1;
-    for (; i > -1; i--) {
-      let j = i - -1;
-      if (windowWidth >= this.breakPointArray[i]) {
-        if (this.activeBreakPoint !== j) {
-          return this.commitToStore(j);
+    for (let i = this.breakPointArray.length - 1; i > -1; i--) {
+      if (window.innerWidth >= this.breakPointArray[i]) {
+        if (this.activeBreakPoint !== i) {
+          this.commitToStore(i);
+          return;
         }
+        return;
       }
-    }
-    if (this.activeBreakPoint !== 0) {
-      return this.commitToStore(0);
-    }*/
-    if (window.innerWidth >= this.breakPointArray[1]) {
-      if (this.activeBreakPoint !== 2) {
-        this.commitToStore(2);
-      }
-    } else if (window.innerWidth >= this.breakPointArray[0]) {
-      if (this.activeBreakPoint !== 1) {
-        this.commitToStore(1);
-      }
-    } else if (this.activeBreakPoint !== 0) {
-      this.commitToStore(0);
     }
   }
 
   commitToStore(payload) {
     this.activeBreakPoint = payload;
-    return this.store.commit(MUTATIONS.ACTIVE_BREAKPOINT, payload);
+    this.store.commit(MUTATIONS.ACTIVE_BREAKPOINT, payload);
   }
 
   setStart() {

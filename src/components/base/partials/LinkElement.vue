@@ -9,7 +9,7 @@ export default {
   components: {},
   props: {
     linkTarget: {
-      type: String,
+      type: [String, Object],
       default: ""
     },
     elemClass: {
@@ -60,10 +60,12 @@ export default {
   }
 }
 .mainnav-active {
-  .site-header,
   .site-navigation {
     .hover-active {
       color: $body-bg;
+      @include transition();
+      transition-property: color;
+      &.router-link-exact-active.navpoint,
       &:hover,
       &:active {
         color: theme-color($theme-colors-1, "dark");

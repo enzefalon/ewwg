@@ -10,10 +10,10 @@
   color: $color;
   @if (is-map($sizes)) {
     @include poly-fluid-sizing('font-size', $sizes);
+    @include transition();
   } @else {
     font-size: inherit;
   }
-  @include transition();
   @if $spacing {
     letter-spacing: $spacing;
   }

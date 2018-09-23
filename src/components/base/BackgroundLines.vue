@@ -1,5 +1,7 @@
 <script>
 import Config from "@/assets/js/Config";
+import RandomKeys from "@/assets/js/RandomKeys";
+
 export default {
   props: {
     gridCols: {
@@ -24,7 +26,8 @@ export default {
       },
       Array.apply(null, { length: this.gridCols }).map(() => {
         return createElement("div", {
-          class: "line" + (this.isInverted ? " inverted" : "")
+          class: "line" + (this.isInverted ? " inverted" : ""),
+          key: RandomKeys.generateId(20)
         });
       })
     );
@@ -46,6 +49,7 @@ export default {
     padding: 0;
     border-color: inherit;
     @include transition();
+    transition-property: border-color;
     @include media-breakpoint-between(xs, sm) {
       &:first-child,
       &:nth-child(6),
@@ -67,8 +71,9 @@ export default {
       }
     }
     &.inverted {
-      border-color: $body-bg;
-      background: $body-color-1;
+      border-color: transparent;
+      background: $body-color-1-alpha-0;
+      transition-property: background-color, border-color;
       @include media-breakpoint-up(xs) {
         &:last-child {
           display: none;
@@ -92,6 +97,24 @@ export default {
     &:nth-child(10) {
       border-right: $border-base-width solid;
     }
+  }
+}
+.theme-2 .bg-lines .line.inverted {
+  background: $body-color-2-alpha-0;
+}
+.theme-3 .bg-lines .line.inverted {
+  background: $body-color-3-alpha-0;
+}
+.mainnav-active {
+  .bg-lines .line.inverted {
+    background: $body-color-1;
+    border-color: $body-bg;
+  }
+  .theme-2 .bg-lines .line.inverted {
+    background: $body-color-2;
+  }
+  .theme-3 .bg-lines .line.inverted {
+    background: $body-color-3;
   }
 }
 </style>
