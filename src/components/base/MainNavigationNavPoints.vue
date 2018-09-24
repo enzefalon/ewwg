@@ -27,8 +27,21 @@ export default {
       {
         class: "mainnav-navpoints"
       },
-      Array.apply(null, { length: this.getNavPoints.length }).map(
-        (item, index) => {
+      [
+        createElement(
+          "div",
+          {
+            class: "placeholder-header"
+          },
+          [
+            createElement("span", {
+              domProps: {
+                innerHTML: "&nbsp;"
+              }
+            })
+          ]
+        ),
+        Array.apply(null, { length: this.getNavPoints.length }).map((item, index) => {
           return createElement(LinkElement, {
             props: {
               linkTarget: { name: this.getNavPoints[index].name }
@@ -46,8 +59,8 @@ export default {
             class: "navpoint",
             key: RandomKeys.generateId(20)
           });
-        }
-      )
+        })
+      ]
     );
   },
   name: "MainNavigationNavPoints"
@@ -56,17 +69,21 @@ export default {
 
 <style lang="scss">
 .mainnav-navpoints {
-  flex-grow: 1;
   @include make-row();
   @extend .bold-8-primary;
   @extend .d-none;
+  width: 100vw;
   opacity: 0;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  align-content: flex-start;
+  .placeholder-header,
   .navpoint {
-    @include transition();
     @include make-col-ready();
+  }
+  .placeholder-header {
+    @include make-col(12);
+    @include vertical-spacing(true);
+  }
+  .navpoint {
     @include make-col-offset(1);
     @include make-col(10);
     @include media-breakpoint-up($breakpoint-3col) {

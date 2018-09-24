@@ -13,10 +13,7 @@ export default class RandomKeys {
 
   static generateUUID() {
     var d = new Date().getTime();
-    if (
-      typeof performance !== "undefined" &&
-      typeof performance.now === "function"
-    ) {
+    if (typeof performance !== "undefined" && typeof performance.now === "function") {
       d += performance.now();
     }
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {

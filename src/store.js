@@ -15,9 +15,7 @@ export default new Vuex.Store({
       return state.historyInfo.length;
     },
     lastHistoryEntry: (state, getters) => {
-      return getters.historyLength
-        ? state.historyInfo[getters.historyLength - 1]
-        : null;
+      return getters.historyLength ? state.historyInfo[getters.historyLength - 1] : null;
     },
     completeHistory: state => {
       return state.historyInfo;

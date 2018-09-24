@@ -91,12 +91,10 @@ export default {
     border-left: $border-base-width solid transparent;
     border-right: $border-base-width solid transparent;
     &:before {
-      transform: rotate(-45deg)
-        translate(-($menu-button-height / 5), -($menu-button-height / 5));
+      transform: rotate(-45deg) translate(-($menu-button-height / 5), -($menu-button-height / 5));
     }
     &:after {
-      transform: rotate(45deg)
-        translate(($menu-button-height / 5), -($menu-button-height / 5));
+      transform: rotate(45deg) translate(($menu-button-height / 5), -($menu-button-height / 5));
     }
   }
   .toggle-text-open {

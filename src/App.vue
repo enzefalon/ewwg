@@ -35,9 +35,7 @@ export default {
   },
   computed: {
     isLogin() {
-      return this.$route && this.$route.name
-        ? this.$route.name === "login"
-        : false;
+      return this.$route && this.$route.name ? this.$route.name === "login" : false;
     }
   },
   methods: {

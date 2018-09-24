@@ -18,10 +18,7 @@ Vue.use(Router);
 //};
 
 const addRouterClassInstance = new DOMElemClassAdder(document.documentElement);
-const extendedRouteInfo = new ExtendedRouteInformation(
-  Config.HISTORY_MAX,
-  store
-);
+const extendedRouteInfo = new ExtendedRouteInformation(Config.HISTORY_MAX, store);
 
 const router = new Router({
   mode: "history",

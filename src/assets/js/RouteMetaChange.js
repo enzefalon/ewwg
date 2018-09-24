@@ -12,8 +12,8 @@ export default class RouteMetaChange {
 
     if (nearestWithTitle) document.title = nearestWithTitle.meta.title;
 
-    Array.from(document.querySelectorAll("[data-vue-router-controlled]")).map(
-      el => el.parentNode.removeChild(el)
+    Array.from(document.querySelectorAll("[data-vue-router-controlled]")).map(el =>
+      el.parentNode.removeChild(el)
     );
 
     if (!nearestWithMeta) return;

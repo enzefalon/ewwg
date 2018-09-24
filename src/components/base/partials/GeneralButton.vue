@@ -47,9 +47,7 @@ export default {
       return this.buttonType + " " + this.elemClass;
     },
     getHoverState() {
-      return !this.hoverActive
-        ? this.hoverActive
-        : this.buttonType === "icon-btn";
+      return !this.hoverActive ? this.hoverActive : this.buttonType === "icon-btn";
     }
   },
   methods: {},

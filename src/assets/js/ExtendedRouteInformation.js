@@ -12,9 +12,7 @@ export default class ExtendedRouteInformation {
   }
 
   get routeInfoLength() {
-    return this.useStore
-      ? this.store.getters.historyLength
-      : this.routesInfo.length;
+    return this.useStore ? this.store.getters.historyLength : this.routesInfo.length;
   }
 
   get lastHistoryEntry() {
