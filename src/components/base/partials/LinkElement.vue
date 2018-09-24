@@ -26,9 +26,7 @@ export default {
   },
   computed: {
     getElementClass() {
-      return this.hoverActive
-        ? this.elemClass + " hover-active"
-        : this.elemClass;
+      return this.hoverActive ? this.elemClass + " hover-active" : this.elemClass;
     }
   },
   methods: {},
