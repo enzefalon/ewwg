@@ -87,15 +87,18 @@ export default {
     }
   }
 }
-.login .bg-lines .line {
-  &:nth-child(6) {
-    border-right: none;
-  }
-  @include media-breakpoint-up($breakpoint-3col) {
-    border-right: none;
-    &:nth-child(2),
-    &:nth-child(10) {
-      border-right: $border-base-width solid;
+.gallery-details,
+.login {
+  .bg-lines .line {
+    &:nth-child(6) {
+      border-right: none;
+    }
+    @include media-breakpoint-up($breakpoint-3col) {
+      border-right: none;
+      &:nth-child(2),
+      &:nth-child(10) {
+        border-right: $border-base-width solid;
+      }
     }
   }
 }

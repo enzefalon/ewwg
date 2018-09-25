@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-card-content">
+  <div class="preview-card-content" v-on:click="gotoDetail">
     <media-preview
       :media-path="mediaPath"
       class="media-preview"/>
@@ -39,6 +39,10 @@ export default {
     mediaPath: {
       type: String,
       default: ""
+    },
+    detailId: {
+      type: Number,
+      default: 0
     }
   },
   data() {
@@ -56,7 +60,11 @@ export default {
       return rand > 1 ? out + " " + out : out;
     }
   },
-  methods: {},
+  methods: {
+    gotoDetail() {
+      this.$router.push({ name: "gallery-details", params: { id: this.detailId } });
+    }
+  },
   name: "PreviewCard"
 };
 </script>

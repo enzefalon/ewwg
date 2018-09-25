@@ -50,10 +50,13 @@ export default {
   );
   text-align: right;
 }
-.login .copyright {
-  @include media-breakpoint-up($breakpoint-3col) {
-    @include make-col-offset(9);
-    @include make-col(3);
+.gallery-details,
+.login {
+  .copyright {
+    @include media-breakpoint-up($breakpoint-3col) {
+      @include make-col-offset(9);
+      @include make-col(3);
+    }
   }
 }
 </style>

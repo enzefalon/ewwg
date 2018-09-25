@@ -6,6 +6,7 @@ import ExtendedRouteInformation from "@/assets/js/ExtendedRouteInformation";
 import RouteMetaChange from "@/assets/js/RouteMetaChange";
 import LoginView from "@/views/LoginView";
 import GalleryOverview from "@/views/GalleryOverview";
+import GalleryDetailsView from "@/views/GalleryDetailsView";
 import Config from "@/assets/js/Config";
 
 //  TODO: research code splitting (especially css splitting) -> hundreds of css rules get doubled with splitting ....
@@ -64,6 +65,24 @@ const router = new Router({
             name: "description",
             content:
               "Hier findest du alle Medien im Überblick. Nutze die Filter, um die Auswahl einzuschränken."
+          }
+        ]
+      }
+    },
+    {
+      path: "gallery/details/:id",
+      name: "gallery-details",
+      component: GalleryDetailsView,
+      meta: {
+        bodyClass: "gallery-details",
+        navPointName: "Details",
+        isMainNav: false,
+        title: "Gallerie Details" + Config.TITLE_SUFFIX + Config.NAME_TO_SHOW,
+        metaTags: [
+          {
+            name: "description",
+            content:
+              "Hier findest du die Detailansicht eines Mediums inklusive einer Kommentarfunktion."
           }
         ]
       }

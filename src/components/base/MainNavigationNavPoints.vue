@@ -21,7 +21,6 @@ export default {
   },
   methods: {},
   render: function(createElement) {
-    console.log(this.getNavPoints);
     return createElement(
       "div",
       {

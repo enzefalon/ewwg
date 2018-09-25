@@ -65,17 +65,25 @@ html, body, #app {
   }
 }
 
-.login #app {
-  .mainView {
-    flex-direction: column;
-    justify-content: center;
-    .mainViewContainer {
+.login #app .mainView {
+  flex-direction: column;
+  justify-content: center;
+  .mainViewContainer {
+    @include make-col-offset(2);
+    @include make-col(8);
+    @include media-breakpoint-up($breakpoint-3col) {
+      @include make-col-offset(3);
+      @include make-col(6);
+    }
+  }
+}
+.gallery-details #app .mainView {
+  .mainViewContainer {
+    @include make-col-offset(1);
+    @include make-col(10);
+    @include media-breakpoint-up($breakpoint-3col) {
       @include make-col-offset(2);
       @include make-col(8);
-      @include media-breakpoint-up($breakpoint-3col) {
-        @include make-col-offset(3);
-        @include make-col(6);
-      }
     }
   }
 }
