@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="linkTarget" :class="getElementClass">
+  <router-link :to="linkTarget" :class="getElementClass" :exact="getExactLink">
     <slot></slot>
   </router-link>
 </template>
@@ -19,6 +19,10 @@ export default {
     hoverActive: {
       type: Boolean,
       default: true
+    },
+    exactLink: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -27,6 +31,9 @@ export default {
   computed: {
     getElementClass() {
       return this.hoverActive ? this.elemClass + " hover-active" : this.elemClass;
+    },
+    getExactLink() {
+      return this.exactLink;
     }
   },
   methods: {},

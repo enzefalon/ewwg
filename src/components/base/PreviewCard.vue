@@ -82,6 +82,9 @@ export default {
   flex-direction: column;
   height: 100%;
 }
+.preview-card-content {
+  cursor: pointer;
+}
 .media-text {
   justify-content: space-between;
 }

@@ -1,11 +1,9 @@
 <template>
   <div class="bread-crumb">
-    <link-element>
-      <head-line
-        :content-headline="getBreadcrump"
-        :type-headline="'h1'"
-      />
-    </link-element>
+    <head-line
+      :content-headline="getBreadcrump"
+      :type-headline="'h1'"
+    />
   </div>
 </template>
 

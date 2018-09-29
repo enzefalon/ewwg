@@ -68,6 +68,7 @@ export default {
 
 <style lang="scss">
 .mainnav-navpoints {
+  pointer-events: all;
   @include make-row();
   @extend .bold-8-primary;
   @extend .d-none;

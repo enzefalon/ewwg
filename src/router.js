@@ -70,7 +70,7 @@ const router = new Router({
       }
     },
     {
-      path: "gallery/details/:id",
+      path: "/gallery/details/:id",
       name: "gallery-details",
       component: GalleryDetailsView,
       meta: {

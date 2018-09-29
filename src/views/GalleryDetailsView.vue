@@ -1,6 +1,7 @@
 <template>
   <div class="mainViewContainer">
-    <!--<media-preview :media-path="getTemporaryPath" class="media-detail"/>-->
+    <media-preview :media-path="getTemporaryPath" class="media-detail"/>
+    <user-details class="details-user"></user-details>
     <div class="details-content-wrapper">
       <head-line
         :content-headline="getRandomHead"
@@ -8,15 +9,24 @@
         class="bold-1_5-primary details-hl" />
       <p class="medium-1-light preview-desc" v-text="getRandomText" />
     </div>
+    <div class="details-comments">
+      <head-line
+        :content-headline="'Kommentare:'"
+        :type-headline="'h2'"
+        class="bold-1_5-primary details-comments-hl" />
+      <user-comment></user-comment>
+    </div>
   </div>
 </template>
 
 <script>
 import MediaPreview from "@/components/base/partials/MediaPreview";
 import HeadLine from "@/components/base/partials/HeadLine";
+import UserDetails from "@/components/base/partials/UserDetails";
+import UserComment from "@/components/base/UserComment";
 
 export default {
-  components: { MediaPreview, HeadLine },
+  components: { MediaPreview, UserDetails, HeadLine, UserComment },
   props: {},
   data() {
     return {
@@ -45,9 +55,18 @@ export default {
 
 <style lang="scss">
 .media-detail {
-  @include vertical-spacing-half(false, true);
+  @include vertical-spacing(false, true);
   margin-left: -($grid-gutter-width / 2);
   margin-right: -($grid-gutter-width / 2);
   padding-right: $border-base-width;
+}
+.details-comments,
+.details-user,
+.details-hl,
+.details-comments-hl {
+  @include vertical-spacing-half(false, true);
+}
+.details-content-wrapper {
+  @include vertical-spacing(false, true);
 }
 </style>
