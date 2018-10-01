@@ -7,9 +7,11 @@ import RouteMetaChange from "@/assets/js/RouteMetaChange";
 import LoginView from "@/views/LoginView";
 import GalleryOverview from "@/views/GalleryOverview";
 import GalleryDetailsView from "@/views/GalleryDetailsView";
+import AccountOverview from "@/views/AccountOverview";
 import Config from "@/assets/js/Config";
 
 //  TODO: research code splitting (especially css splitting) -> hundreds of css rules get doubled with splitting ....
+//  TODO: change to nested routes (Gallery and Account)
 
 Vue.use(Router);
 
@@ -83,6 +85,23 @@ const router = new Router({
             name: "description",
             content:
               "Hier findest du die Detailansicht eines Mediums inklusive einer Kommentarfunktion."
+          }
+        ]
+      }
+    },
+    {
+      path: "/account",
+      name: "account",
+      component: AccountOverview,
+      meta: {
+        bodyClass: "account-overview",
+        navPointName: "Account",
+        isMainNav: true,
+        title: "Account Übersicht" + Config.TITLE_SUFFIX + Config.NAME_TO_SHOW,
+        metaTags: [
+          {
+            name: "description",
+            content: "Hier findest du alle Einstellungen rund um Deinen Account."
           }
         ]
       }
