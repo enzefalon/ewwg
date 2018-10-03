@@ -33,59 +33,33 @@
         <search-field />
       </div>
     </div>
-    <div class="galleryPreview">
-      <div class="preview-card">
-        <preview-card
-          :media-path="getTemporaryPath"/>
-      </div>
-      <div class="preview-card">
-        <preview-card
-          :media-path="getTemporaryPath"/>
-      </div>
-      <div class="preview-card">
-        <preview-card
-          :media-path="getTemporaryPath"/>
-      </div>
-      <div class="preview-card">
-        <preview-card
-          :media-path="getTemporaryPath"/>
-      </div>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import PreviewCard from "@/components/base/PreviewCard";
 import GeneralButton from "@/components/base/partials/GeneralButton";
 import SearchField from "@/components/base/partials/SearchField";
 
 export default {
-  components: { PreviewCard, GeneralButton, SearchField },
+  components: { GeneralButton, SearchField },
   props: {},
   data() {
-    return {
-      baseUrl: process.env.BASE_URL
-    };
+    return {};
   },
-  computed: {
-    getTemporaryPath() {
-      return this.baseUrl + `img/base/demo_16by9.png`;
-    }
-  },
+  computed: {},
   methods: {},
-  name: "GalleryOverview"
+  name: "GalleryView"
 };
 </script>
 
 <style lang="scss">
-.galleryFilter,
-.galleryPreview {
+.galleryFilter {
   @include make-row();
 }
 .preview-search,
 .preview-filter,
-.preview-sort,
-.preview-card {
+.preview-sort {
   @include vertical-spacing(false, true);
   @include make-col-ready();
   @include make-col(6);

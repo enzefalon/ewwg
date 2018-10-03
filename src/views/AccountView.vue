@@ -11,7 +11,7 @@ export default {
   },
   computed: {},
   methods: {},
-  name: "AccountOverview"
+  name: "AccountView"
 };
 </script>
 

@@ -22,11 +22,7 @@ export default {
   computed: {},
   methods: {
     toggleMenu() {
-      if (!this.navClassBody.hasClass("mainnav-active")) {
-        this.navClassBody.addClassToElement("mainnav-active");
-      } else {
-        this.navClassBody.removeClassFromElement("mainnav-active");
-      }
+      this.$emit("toggleMenu");
     }
   },
   name: "MainNavigationToggle"

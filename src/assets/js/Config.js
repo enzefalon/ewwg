@@ -1,3 +1,4 @@
+//  TODO: refactor to 16 column grid
 const Config = {
   NAME_TO_SHOW: "John Doe",
   TITLE_SUFFIX: " | EWWG Webgallery von ",

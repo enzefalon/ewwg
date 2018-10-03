@@ -1,5 +1,5 @@
 <template>
-  <div class="mainViewContainer">
+  <div>
     <media-preview :media-path="getTemporaryPath" class="media-detail"/>
     <user-details class="details-user"></user-details>
     <div class="details-content-wrapper">
@@ -49,7 +49,7 @@ export default {
     }
   },
   methods: {},
-  name: "GalleryDetailsView"
+  name: "GalleryDetails"
 };
 </script>
 

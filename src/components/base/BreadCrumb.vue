@@ -8,11 +8,10 @@
 </template>
 
 <script>
-import LinkElement from "@/components/base/partials/LinkElement";
 import HeadLine from "@/components/base/partials/HeadLine";
 
 export default {
-  components: { HeadLine, LinkElement },
+  components: { HeadLine },
   props: {},
   data() {
     return {};

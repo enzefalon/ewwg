@@ -10,16 +10,30 @@ export default {
     return {};
   },
   computed: {
+    //  TODO: refactor getNavPoint => currently pretty ugly
     getNavPoints() {
+      let navArr = [];
       if (this.$router && this.$router.options && this.$router.options.routes) {
-        return this.$router.options.routes.filter(route => {
-          return route.meta && route.meta.isMainNav && route.meta.navPointName;
+        this.$router.options.routes.forEach(route => {
+          if (route.children) {
+            route.children.forEach(child => {
+              if (child.meta && child.meta.isMainNav && child.meta.navPointName) {
+                navArr.push(child);
+              }
+            });
+          } else if (route.meta && route.meta.isMainNav && route.meta.navPointName) {
+            navArr.push(route);
+          }
         });
       }
-      return [];
+      return navArr;
     }
   },
-  methods: {},
+  methods: {
+    toggleMenu() {
+      this.$emit("toggleMenu");
+    }
+  },
   render: function(createElement) {
     return createElement(
       "div",
@@ -44,6 +58,9 @@ export default {
           return createElement(LinkElement, {
             props: {
               linkTarget: { name: this.getNavPoints[index].name }
+            },
+            nativeOn: {
+              click: this.toggleMenu
             },
             scopedSlots: {
               default: () => {
